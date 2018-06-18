@@ -13,6 +13,9 @@ class MainPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        MyRequests.giftList(vc: self){res in
+            
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -22,6 +25,13 @@ class MainPageViewController: UIViewController {
     }
     
 
+    //rollmanagement / scroll list : emtiaz giri 10ta bayad neshun bedim
+    
+    //personal panellistmobile : giftha
+    
+    //listMobile : clubharo neshun mide
+    
+    //news/list
     
 
 }

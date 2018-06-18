@@ -10,4 +10,8 @@ import Foundation
 
 public class DefaultStrings{
     
+    static let loginRes = "loginRes"
+    
+    static let isItGuest = "isItGuest"
+    
 }
