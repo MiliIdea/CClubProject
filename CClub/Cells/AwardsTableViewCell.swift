@@ -13,7 +13,6 @@ class AwardsTableViewCell: UITableViewCell {
     
     @IBOutlet var awardName: UILabel!
     @IBOutlet var club: UILabel!
-    @IBOutlet var clubLogo: UIImageView!
     @IBOutlet var points: UILabel!
     @IBOutlet var awardImage: UIImageView!
     

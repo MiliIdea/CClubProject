@@ -1,8 +1,8 @@
 //
-//  GainCoinsTableViewCell.swift
+//  ClubTableViewCell.swift
 //  CClub
 //
-//  Created by MehrYasan on 5/14/18.
+//  Created by MehrYasan on 6/18/18.
 //  Copyright © 2018 Milad Karimi. All rights reserved.
 //
 
@@ -12,11 +12,11 @@ class ClubTableViewCell: UITableViewCell {
 
     @IBOutlet var clubImage: UIImageView!
     
-    @IBOutlet var clubName: UILabel!
+    @IBOutlet var clubeName: UILabel!
     
-    @IBOutlet var points: UILabel!
+    @IBOutlet var allPoints: UILabel!
     
-    @IBOutlet var nearestAward: UILabel!
+    @IBOutlet var nearestGift: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -10,9 +10,11 @@ import Foundation
 
 public class URLs {
     
-    static let terms = "http://www.cclubco.com/article/p8"
+    static let terms = "https://www.cclubco.com/article/p8"
     
     static let server = "https://my.c-club.ir/cclub/service/"
+    
+    static let imageServer = "https://my.c-club.ir/cclub/service/file/image/"
     
     static let login = server + "verification/verifyAndLogin"
     

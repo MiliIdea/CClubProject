@@ -13,34 +13,24 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct UpdatedBy : Codable {
-	let active : Bool?
-	let fullTitle : String?
-	let rowId : Int?
-	let fullName : String?
-	let companyName : String?
-	let username : String?
-	let emailIsConfirmed : Bool?
-
-	enum CodingKeys: String, CodingKey {
-
-		case active = "active"
-		case fullTitle = "fullTitle"
-		case rowId = "rowId"
-		case fullName = "fullName"
-		case companyName = "companyName"
-		case username = "username"
-		case emailIsConfirmed = "emailIsConfirmed"
-	}
-
-	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		active = try values.decodeIfPresent(Bool.self, forKey: .active)
-		fullTitle = try values.decodeIfPresent(String.self, forKey: .fullTitle)
-		rowId = try values.decodeIfPresent(Int.self, forKey: .rowId)
-		fullName = try values.decodeIfPresent(String.self, forKey: .fullName)
-		companyName = try values.decodeIfPresent(String.self, forKey: .companyName)
-		username = try values.decodeIfPresent(String.self, forKey: .username)
-		emailIsConfirmed = try values.decodeIfPresent(Bool.self, forKey: .emailIsConfirmed)
-	}
-
+    let active : Bool?
+    let fullTitle : String?
+    let rowId : Int?
+    let fullName : String?
+    let companyName : String?
+    let username : String?
+    let emailIsConfirmed : Bool?
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case active = "active"
+        case fullTitle = "fullTitle"
+        case rowId = "rowId"
+        case fullName = "fullName"
+        case companyName = "companyName"
+        case username = "username"
+        case emailIsConfirmed = "emailIsConfirmed"
+    }
+    
+    
 }

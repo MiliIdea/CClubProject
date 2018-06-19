@@ -27,6 +27,7 @@ public class MyRequests {
             }
             
         }else{
+            completionHandler(res)
             vc.view.makeToast(res?.errorDesc)
         }
     }
@@ -34,12 +35,13 @@ public class MyRequests {
     
     // MARK: register
     
-    static func register(vc : UIViewController , phone : String , completionHandler: @escaping (ResponseModel<String>?) -> Void){
+    static func register(vc : UIViewController , phone : String  ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<String>?) -> Void){
         
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
         
-        let l = App.showLoading(vc: vc)
         request(URLs.register, method: .post , parameters: RegisterRequestModel.init(phone: phone).getParams(), encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<String>>) in
-            l.disView()
+            if(withLoading){l!.disView()}
             resHandler(vc , res: response.result.value){ res in
                 completionHandler(res)
             }
@@ -52,11 +54,12 @@ public class MyRequests {
     
     // MARK: login
     
-    static func login(vc : UIViewController , phone : String , code : String, completionHandler: @escaping (ResponseModel<LoginRes>?) -> Void){
+    static func login(vc : UIViewController , phone : String , code : String ,_ withLoading : Bool = true, completionHandler: @escaping (ResponseModel<LoginRes>?) -> Void){
 
-        let l = App.showLoading(vc: vc)
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
         request(URLs.login, method: .post , parameters: LoginRequestModel.init(code: code, phone: phone).getParams(), encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<LoginRes>>) in
-            l.disView()
+            if(withLoading){l!.disView()}
             resHandler(vc , res: response.result.value){ res in
                 completionHandler(res)
             }
@@ -66,11 +69,12 @@ public class MyRequests {
     }
     
     
-    static func loginAsAGuest(vc : UIViewController, completionHandler: @escaping (ResponseModel<LoginRes>?) -> Void){
+    static func loginAsAGuest(vc : UIViewController ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<LoginRes>?) -> Void){
         
-        let l = App.showLoading(vc: vc)
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
         request(URLs.loginAsAGuest, method: .post , parameters: ["lang":"FA","organizationId":1000,"roleId":100011,"userId":100060007,"userPassword":"28275","username":"00000000000"], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<LoginRes>>) in
-            l.disView()
+            if(withLoading){l!.disView()}
             resHandler(vc , res: response.result.value){ res in
                 completionHandler(res)
             }
@@ -80,11 +84,12 @@ public class MyRequests {
     }
     
     
-    static func resendCode(vc : UIViewController , phone : String, completionHandler: @escaping (ResponseModel<String>?) -> Void){
+    static func resendCode(vc : UIViewController ,_ withLoading : Bool = true , phone : String, completionHandler: @escaping (ResponseModel<String>?) -> Void){
         
-        let l = App.showLoading(vc: vc)
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
         request(URLs.resendCode, method: .post , parameters: ["phone" : phone], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<String>>) in
-            l.disView()
+            if(withLoading){l!.disView()}
             resHandler(vc , res: response.result.value){ res in
                 completionHandler(res)
             }
@@ -97,11 +102,12 @@ public class MyRequests {
     // MARK: MainPageRequests
     
     
-    static func scoreList(vc : UIViewController , completionHandler: @escaping (ResponseModel<ScoreListRes>?) -> Void){
+    static func scoreList(vc : UIViewController ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<[ScoreListRes]>?) -> Void){
         
-        let l = App.showLoading(vc: vc)
-        request(URLs.scoreList, method: .post , parameters: ["ticket" : (App.defaults.object(forKey: DefaultStrings.loginRes) as! LoginRes).ticket ?? "" ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<ScoreListRes>>) in
-            l.disView()
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.scoreList, method: .post , parameters: ["ticket" : App.loginRes?.ticket ?? "" ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<[ScoreListRes]>>) in
+            if(withLoading){l!.disView()}
             resHandler(vc , res: response.result.value){ res in
                 completionHandler(res)
             }
@@ -110,11 +116,12 @@ public class MyRequests {
         
     }
     
-    static func newsList(vc : UIViewController , completionHandler: @escaping (ResponseModel<String>?) -> Void){
+    static func newsList(vc : UIViewController ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<String>?) -> Void){
         
-        let l = App.showLoading(vc: vc)
-        request(URLs.getNews, method: .post , parameters: ["ticket" : (App.defaults.object(forKey: DefaultStrings.loginRes) as! LoginRes).ticket ?? "" ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<String>>) in
-            l.disView()
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.getNews, method: .post , parameters: ["ticket" : App.loginRes?.ticket ?? "" ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<String>>) in
+            if(withLoading){l!.disView()}
             resHandler(vc , res: response.result.value){ res in
                 completionHandler(res)
             }
@@ -123,11 +130,12 @@ public class MyRequests {
         
     }
     
-    static func giftList(vc : UIViewController , completionHandler: @escaping (ResponseModel<GiftListRes>?) -> Void){
+    static func giftList(vc : UIViewController ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<[GiftListRes]>?) -> Void){
         
-        let l = App.showLoading(vc: vc)
-        request(URLs.giftList, method: .post , parameters: ["ticket" : (App.defaults.object(forKey: DefaultStrings.loginRes) as! LoginRes).ticket ?? "" , "pageNo" : 1 , "pageSize" : 10 ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<GiftListRes>>) in
-            l.disView()
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.giftList, method: .post , parameters: ["ticket" : App.loginRes?.ticket ?? "" , "pageNo" : 1 , "pageSize" : 10 ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<[GiftListRes]>>) in
+            if(withLoading){l!.disView()}
             resHandler(vc , res: response.result.value){ res in
                 completionHandler(res)
             }
@@ -136,11 +144,12 @@ public class MyRequests {
         
     }
     
-    static func myClubsList(vc : UIViewController , completionHandler: @escaping (ResponseModel<MyClubsRes>?) -> Void){
+    static func myClubsList(vc : UIViewController ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<[MyClubsRes]>?) -> Void){
         
-        let l = App.showLoading(vc: vc)
-        request(URLs.getListOfMyClubs, method: .post , parameters: ["ticket" : (App.defaults.object(forKey: DefaultStrings.loginRes) as! LoginRes).ticket! , "pageNo" : 1 , "pageSize" : 10 ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<MyClubsRes>>) in
-            l.disView()
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.getListOfMyClubs, method: .post , parameters: ["ticket" : App.loginRes?.ticket! , "pageNo" : 1 , "pageSize" : 10 ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<[MyClubsRes]>>) in
+            if(withLoading){l!.disView()}
             resHandler(vc , res: response.result.value){ res in
                 completionHandler(res)
             }

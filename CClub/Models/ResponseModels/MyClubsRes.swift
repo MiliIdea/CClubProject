@@ -30,14 +30,6 @@ struct MyClubsRes : Codable {
 		case image
 	}
 
-	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		rowId = try values.decodeIfPresent(Int.self, forKey: .rowId)
-		organizationId = try values.decodeIfPresent(Int.self, forKey: .organizationId)
-		title = try values.decodeIfPresent(String.self, forKey: .title)
-		point = try values.decodeIfPresent(Int.self, forKey: .point)
-		credit = try values.decodeIfPresent(Int.self, forKey: .credit)
-		image = try Image(from: decoder)
-	}
+
 
 }

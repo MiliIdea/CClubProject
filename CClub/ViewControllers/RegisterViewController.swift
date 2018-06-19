@@ -17,6 +17,12 @@ class RegisterViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if(App.loginRes != nil && App.loginRes?.ticket != nil){
+            let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+            let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "MyTabBarController")
+            appDelegate.window?.rootViewController = initialViewController
+            appDelegate.window?.makeKeyAndVisible()
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 

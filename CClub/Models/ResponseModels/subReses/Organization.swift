@@ -23,16 +23,16 @@ struct Organization : Codable {
 	let establishingYear : Int?
 	let ownerLastName : String?
 	let parentOrg : ParentOrg?
-	let tel : Int?
+	let tel : String?
 	let address : String?
-	let code : Int?
+	let code : String?
 	let logoImage : LogoImage?
 	let email : String?
-	let mobileNumber : Int?
+	let mobileNumber : String?
 	let marketerFirstName : String?
 	let marketerLastName : String?
-	let marketerCode : Int?
-	let marketerMobile : Int?
+	let marketerCode : String?
+	let marketerMobile : String?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -58,28 +58,5 @@ struct Organization : Codable {
 		case marketerMobile = "marketerMobile"
 	}
 
-	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		created = try values.decodeIfPresent(String.self, forKey: .created)
-		updated = try values.decodeIfPresent(String.self, forKey: .updated)
-		accessKey = try values.decodeIfPresent(String.self, forKey: .accessKey)
-		active = try values.decodeIfPresent(Bool.self, forKey: .active)
-		fullTitle = try values.decodeIfPresent(String.self, forKey: .fullTitle)
-		rowId = try values.decodeIfPresent(Int.self, forKey: .rowId)
-		name = try values.decodeIfPresent(String.self, forKey: .name)
-		establishingYear = try values.decodeIfPresent(Int.self, forKey: .establishingYear)
-		ownerLastName = try values.decodeIfPresent(String.self, forKey: .ownerLastName)
-		parentOrg = try ParentOrg(from: decoder)
-		tel = try values.decodeIfPresent(Int.self, forKey: .tel)
-		address = try values.decodeIfPresent(String.self, forKey: .address)
-		code = try values.decodeIfPresent(Int.self, forKey: .code)
-		logoImage = try LogoImage(from: decoder)
-		email = try values.decodeIfPresent(String.self, forKey: .email)
-		mobileNumber = try values.decodeIfPresent(Int.self, forKey: .mobileNumber)
-		marketerFirstName = try values.decodeIfPresent(String.self, forKey: .marketerFirstName)
-		marketerLastName = try values.decodeIfPresent(String.self, forKey: .marketerLastName)
-		marketerCode = try values.decodeIfPresent(Int.self, forKey: .marketerCode)
-		marketerMobile = try values.decodeIfPresent(Int.self, forKey: .marketerMobile)
-	}
 
 }

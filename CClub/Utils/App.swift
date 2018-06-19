@@ -15,6 +15,10 @@ public class App {
     
     static let uuid : String = UIDevice.current.identifierForVendor!.uuidString
     
+    static var giftList : [GiftListRes] = [GiftListRes]()
+    static var scoreList : [ScoreListRes] = [ScoreListRes]()
+    static var myClubs : [MyClubsRes] = [MyClubsRes]()
+    
     static var decoder : JSONDecoder {
         get{
             let decoder = JSONDecoder()

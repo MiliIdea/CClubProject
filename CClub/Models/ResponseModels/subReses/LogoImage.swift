@@ -22,7 +22,7 @@ struct LogoImage : Codable {
 	let rowId : Int?
 	let name : String?
 	let path : String?
-	let dataSize : Int?
+	let dataSize : String?
 	let dataType : String?
 
 	enum CodingKeys: String, CodingKey {
@@ -40,19 +40,5 @@ struct LogoImage : Codable {
 		case dataType = "dataType"
 	}
 
-	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		createdBy = try CreatedBy(from: decoder)
-		created = try values.decodeIfPresent(String.self, forKey: .created)
-		updatedBy = try UpdatedBy(from: decoder)
-		updated = try values.decodeIfPresent(String.self, forKey: .updated)
-		active = try values.decodeIfPresent(Bool.self, forKey: .active)
-		fullTitle = try values.decodeIfPresent(String.self, forKey: .fullTitle)
-		rowId = try values.decodeIfPresent(Int.self, forKey: .rowId)
-		name = try values.decodeIfPresent(String.self, forKey: .name)
-		path = try values.decodeIfPresent(String.self, forKey: .path)
-		dataSize = try values.decodeIfPresent(Int.self, forKey: .dataSize)
-		dataType = try values.decodeIfPresent(String.self, forKey: .dataType)
-	}
 
 }

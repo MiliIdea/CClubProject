@@ -13,7 +13,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct ScoreListRes : Codable {
-	let ruleManagementId : Int?
+	let ruleManagementId : CLongLong?
 	let eventType : EventType?
 	let organization : Organization?
 	let reward : String?

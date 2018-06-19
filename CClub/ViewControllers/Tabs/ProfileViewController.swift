@@ -1,21 +1,20 @@
 //
-//  MainPageViewController.swift
+//  ProfileViewController.swift
 //  CClub
 //
-//  Created by MehrYasan on 5/15/18.
+//  Created by MehrYasan on 6/18/18.
 //  Copyright © 2018 Milad Karimi. All rights reserved.
 //
 
 import UIKit
 
-class MainPageViewController: UIViewController {
+class ProfileViewController: UIViewController{
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        MyRequests.giftList(vc: self){res in
-            
-        }
         // Do any additional setup after loading the view.
     }
 
@@ -23,15 +22,6 @@ class MainPageViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    //rollmanagement / scroll list : emtiaz giri 10ta bayad neshun bedim
-    
-    //personal panellistmobile : giftha
-    
-    //listMobile : clubharo neshun mide
-    
-    //news/list
     
 
 }
