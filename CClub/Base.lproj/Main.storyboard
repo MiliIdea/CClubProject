@@ -718,7 +718,7 @@
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="sliderCell2" reuseIdentifier="sliderCell2" id="W10-QY-af2" userLabel="sliderCell2">
-                                                                <rect key="frame" x="0.0" y="1" width="375" height="182"/>
+                                                                <rect key="frame" x="0.0" y="0.5" width="375" height="182"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="182"/>
@@ -1220,7 +1220,7 @@
         <!--Send Message View Controller-->
         <scene sceneID="frh-ak-kjy">
             <objects>
-                <viewController id="sz0-6H-bJz" customClass="SendMessageViewController" customModule="CClub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SendMessageViewController" id="sz0-6H-bJz" customClass="SendMessageViewController" customModule="CClub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BNc-wM-iEf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1241,6 +1241,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
+                                            <action selector="back:" destination="sz0-6H-bJz" eventType="touchUpInside" id="yCH-MT-PfC"/>
                                             <action selector="back:" destination="L7s-hG-dSw" eventType="touchUpInside" id="yyt-I7-f3h"/>
                                         </connections>
                                     </button>
@@ -1279,11 +1280,17 @@
                                 <state key="normal" title="ارسال نظر">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendMessage:" destination="sz0-6H-bJz" eventType="touchUpInside" id="Dkr-Kz-fYL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="s4v-KM-bz2"/>
                     </view>
+                    <connections>
+                        <outlet property="messageTextView" destination="OVA-TD-dfU" id="9xx-fk-4oh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0Z-40-K6a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1647,6 +1654,9 @@
                                                 <state key="normal" title="تماس با ما">
                                                     <color key="titleColor" red="0.16057329179319729" green="0.15039578328979594" blue="0.31440513703129258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="contactUs:" destination="cqR-81-I7Z" eventType="touchUpInside" id="UJZ-rp-Bgd"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mze-wt-Qbj">
                                                 <rect key="frame" x="174" y="95" width="199" height="30"/>
@@ -1655,6 +1665,9 @@
                                                 <state key="normal" title="قوانین و مقررات">
                                                     <color key="titleColor" red="0.16057329179999999" green="0.1503957833" blue="0.314405137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="conditions:" destination="cqR-81-I7Z" eventType="touchUpInside" id="4jF-Yo-MdO"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ib2-WR-45C">
                                                 <rect key="frame" x="134" y="135" width="239" height="30"/>
@@ -1693,6 +1706,9 @@
                                                 <state key="normal" title="خروج از حساب کاربری">
                                                     <color key="titleColor" red="0.16057329179999999" green="0.1503957833" blue="0.314405137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="logout:" destination="cqR-81-I7Z" eventType="touchUpInside" id="6Fk-Ws-ZKt"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1704,6 +1720,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Fba-0j-DjO"/>
                     </view>
+                    <connections>
+                        <outlet property="notifyTable" destination="wFX-PD-bdj" id="gnh-rC-h40"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tyr-t8-6VE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1807,6 +1826,9 @@
                                 <state key="normal" title="۶۶۵۰۴۳۴۴">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="call:" destination="xyf-uv-Ynv" eventType="touchUpInside" id="o66-KK-F3e"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNp-WU-yAF">
                                 <rect key="frame" x="16" y="519" width="160" height="45"/>
@@ -1816,11 +1838,23 @@
                                 <state key="normal" title="مسیریابی روی نقشه">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="routing:" destination="xyf-uv-Ynv" eventType="touchUpInside" id="MVX-4N-QLb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TdL-2B-JZz"/>
                     </view>
+                    <connections>
+                        <outlet property="address" destination="Rf6-v3-Qiy" id="0gQ-sy-zbJ"/>
+                        <outlet property="email" destination="fb7-lE-9aG" id="On4-so-I3n"/>
+                        <outlet property="mapImage" destination="eIA-gr-MSr" id="eUt-35-139"/>
+                        <outlet property="phone" destination="z8n-7e-GRs" id="ErZ-xT-wE6"/>
+                        <outlet property="phoneButton" destination="kng-pa-3u7" id="cCS-3Y-Idr"/>
+                        <outlet property="routingButton" destination="SNp-WU-yAF" id="xmC-zm-uRc"/>
+                        <outlet property="web" destination="QiC-Yp-QIF" id="iVl-qg-bJX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJg-uS-a9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

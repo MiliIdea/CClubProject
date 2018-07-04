@@ -10,6 +10,12 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet var notifyTable: UITableView!
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +27,15 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func contactUs(_ sender: Any) {
     }
-    */
+    
+    @IBAction func conditions(_ sender: Any) {
+    }
+    
+    @IBAction func logout(_ sender: Any) {
+    }
+    
+    
 
 }

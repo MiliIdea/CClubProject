@@ -72,9 +72,12 @@
 		108D36A020DA51F800D6BFEC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108D369F20DA51F800D6BFEC /* MainTabBarController.swift */; };
 		1092F26020EC9EED00A41B0C /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1092F25E20EC9EED00A41B0C /* NotificationTableViewCell.swift */; };
 		1092F26120EC9EED00A41B0C /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1092F25F20EC9EED00A41B0C /* NotificationTableViewCell.xib */; };
-		1092F26420ECB4C500A41B0C /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1092F26320ECB4C500A41B0C /* SendMessageViewController.swift */; };
 		1092F26620ECB53400A41B0C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1092F26520ECB53400A41B0C /* SettingsViewController.swift */; };
 		1092F26820ECB58B00A41B0C /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1092F26720ECB58B00A41B0C /* ContactViewController.swift */; };
+		1092F26A20ECC60100A41B0C /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1092F26920ECC60100A41B0C /* SendMessageViewController.swift */; };
+		1092F26E20ECDF8900A41B0C /* CommentRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1092F26B20ECDF8800A41B0C /* CommentRes.swift */; };
+		1092F26F20ECDF8900A41B0C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1092F26C20ECDF8800A41B0C /* User.swift */; };
+		1092F27020ECDF8900A41B0C /* Usecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1092F26D20ECDF8800A41B0C /* Usecase.swift */; };
 		10C942B620A864160053B1B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C942B520A864160053B1B1 /* AppDelegate.swift */; };
 		10C942B820A864160053B1B1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C942B720A864160053B1B1 /* RegisterViewController.swift */; };
 		10C942BB20A864160053B1B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10C942B920A864160053B1B1 /* Main.storyboard */; };
@@ -162,9 +165,12 @@
 		108D369F20DA51F800D6BFEC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1092F25E20EC9EED00A41B0C /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		1092F25F20EC9EED00A41B0C /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
-		1092F26320ECB4C500A41B0C /* SendMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
 		1092F26520ECB53400A41B0C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1092F26720ECB58B00A41B0C /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		1092F26920ECC60100A41B0C /* SendMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
+		1092F26B20ECDF8800A41B0C /* CommentRes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentRes.swift; sourceTree = "<group>"; };
+		1092F26C20ECDF8800A41B0C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1092F26D20ECDF8800A41B0C /* Usecase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usecase.swift; sourceTree = "<group>"; };
 		10C942B220A864160053B1B1 /* CClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10C942B520A864160053B1B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10C942B720A864160053B1B1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +241,7 @@
 			children = (
 				10E0A82C20D77B920081E4E5 /* subReses */,
 				103339C420C3E4C5002F4220 /* LoginRes.swift */,
+				1092F26B20ECDF8800A41B0C /* CommentRes.swift */,
 				10E0A81820D76E690081E4E5 /* ScoreListRes.swift */,
 				10E0A82220D76EEF0081E4E5 /* GiftListRes.swift */,
 				10E0A82420D76F750081E4E5 /* MyClubsRes.swift */,
@@ -278,8 +285,6 @@
 				105164B120EBA50E0097F4DE /* GiftDetail */,
 				1076018320DF7A6C00ACF9F1 /* ClubDetail */,
 				104C6CCE20D7BF640084E2B2 /* ScoreViewController.swift */,
-				104C6CD020D7BF720084E2B2 /* GiftViewController.swift */,
-				104C6CD220D7BF9B0084E2B2 /* ClubsViewController.swift */,
 				104C6CD420D7C0330084E2B2 /* ProfileViewController.swift */,
 				108D369F20DA51F800D6BFEC /* MainTabBarController.swift */,
 			);
@@ -289,8 +294,9 @@
 		105164B120EBA50E0097F4DE /* GiftDetail */ = {
 			isa = PBXGroup;
 			children = (
+				104C6CD020D7BF720084E2B2 /* GiftViewController.swift */,
 				105164B220EBA53E0097F4DE /* GiftDetailViewController.swift */,
-				1092F26320ECB4C500A41B0C /* SendMessageViewController.swift */,
+				1092F26920ECC60100A41B0C /* SendMessageViewController.swift */,
 			);
 			path = GiftDetail;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 		1076018320DF7A6C00ACF9F1 /* ClubDetail */ = {
 			isa = PBXGroup;
 			children = (
+				104C6CD220D7BF9B0084E2B2 /* ClubsViewController.swift */,
 				1076018420DF7ABB00ACF9F1 /* ClubDetailViewController.swift */,
 			);
 			path = ClubDetail;
@@ -403,6 +410,8 @@
 				1004D06520DE626E00B4ACCD /* OrganizationPersonGroup.swift */,
 				1004D06620DE626E00B4ACCD /* OrganizationPersonLevel.swift */,
 				1004D06420DE626E00B4ACCD /* PersonOrganizationRelation.swift */,
+				1092F26D20ECDF8800A41B0C /* Usecase.swift */,
+				1092F26C20ECDF8800A41B0C /* User.swift */,
 			);
 			path = subReses;
 			sourceTree = "<group>";
@@ -604,6 +613,7 @@
 				104C6CC220D7B3830084E2B2 /* ScoreTableViewCell.swift in Sources */,
 				103339B720C3D3C8002F4220 /* App.swift in Sources */,
 				105164B820EBBB7A0097F4DE /* ChatTableViewCell.swift in Sources */,
+				1092F27020ECDF8900A41B0C /* Usecase.swift in Sources */,
 				103339BD20C3D595002F4220 /* MyRequests.swift in Sources */,
 				10E0A82820D76F760081E4E5 /* MyClubsRes.swift in Sources */,
 				1092F26620ECB53400A41B0C /* SettingsViewController.swift in Sources */,
@@ -634,8 +644,8 @@
 				10E0A81F20D76E690081E4E5 /* ScoreListRes.swift in Sources */,
 				10E0A82B20D76F760081E4E5 /* Image.swift in Sources */,
 				104C6CD120D7BF720084E2B2 /* GiftViewController.swift in Sources */,
-				1092F26420ECB4C500A41B0C /* SendMessageViewController.swift in Sources */,
 				103339C320C3DB1D002F4220 /* ResponseModel.swift in Sources */,
+				1092F26A20ECC60100A41B0C /* SendMessageViewController.swift in Sources */,
 				1004D06120DE614000B4ACCD /* GetProfileRes.swift in Sources */,
 				104C6CD320D7BF9B0084E2B2 /* ClubsViewController.swift in Sources */,
 				103339DF20C413DD002F4220 /* SendCommentRequestModel.swift in Sources */,
@@ -644,6 +654,7 @@
 				104C6CD520D7C0340084E2B2 /* ProfileViewController.swift in Sources */,
 				103339DD20C41343002F4220 /* GiftDeleteLikeRequestModel.swift in Sources */,
 				103339D720C40D8A002F4220 /* GetCommentRequestModel.swift in Sources */,
+				1092F26F20ECDF8900A41B0C /* User.swift in Sources */,
 				1004D06B20DE626E00B4ACCD /* OrganizationPersonLevel.swift in Sources */,
 				103339C120C3D7A3002F4220 /* LoadingViewController.swift in Sources */,
 				104C6CCF20D7BF640084E2B2 /* ScoreViewController.swift in Sources */,
@@ -653,6 +664,7 @@
 				103339DB20C41051002F4220 /* GiftLikeRequestModel.swift in Sources */,
 				103339E320C419E2002F4220 /* GetHistoryActivityClubRequestModel.swift in Sources */,
 				103339E520C41A95002F4220 /* SaveChangeNotificationRequestModel.swift in Sources */,
+				1092F26E20ECDF8900A41B0C /* CommentRes.swift in Sources */,
 				1092F26820ECB58B00A41B0C /* ContactViewController.swift in Sources */,
 				10E0A83120D783F20081E4E5 /* UpdatedBy.swift in Sources */,
 				103339E120C41891002F4220 /* GetInfoClubRequestModel.swift in Sources */,

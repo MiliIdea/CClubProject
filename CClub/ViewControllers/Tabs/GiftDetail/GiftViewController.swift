@@ -49,5 +49,61 @@ class GiftViewController: UIViewController  , UITableViewDelegate , UITableViewD
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 155 * self.view.frame.height / 667
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let c = App.giftList[indexPath.row]
+        MyRequests.getComment(vc: self, subject: (c.rowId?.description)!, rowId: .REWARD){ res in
+            if(res?.done)!{
+                let vC : GiftDetailViewController = (self.storyboard?.instantiateViewController(withIdentifier: "GiftDetailViewController"))! as! GiftDetailViewController
+                vC.comments = (res?.result)!
+                vC.giftData = c
+                self.navigationController?.pushViewController(vC, animated: true)
+            }else{
+                self.view.makeToast(res?.errorDesc)
+            }
+        }
+        
+    }
+    
+    
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

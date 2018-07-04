@@ -38,4 +38,6 @@ public class URLs {
     
     static let getLevel = server + "levelAssign/getLevel"
     
+    static let getComment = server + "comment/list"
+    
 }

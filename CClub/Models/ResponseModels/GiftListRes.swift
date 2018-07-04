@@ -39,6 +39,8 @@ struct GiftListRes : Codable {
     let currentCredit : Int?
     let isLikedByUser : Bool?
     let commentCount : Int?
+    let remainedCount : Int?
+    let description : String?
     
     enum CodingKeys: String, CodingKey {
         
@@ -68,36 +70,8 @@ struct GiftListRes : Codable {
         case currentCredit = "currentCredit"
         case isLikedByUser = "isLikedByUser"
         case commentCount = "commentCount"
+        case remainedCount = "remainedCount"
+        case description = "description"
     }
-    
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        rowId = try values.decodeIfPresent(Int.self, forKey: .rowId)
-        fromDate = try values.decodeIfPresent(String.self, forKey: .fromDate)
-        fromOrganizationId = try values.decodeIfPresent(Int.self, forKey: .fromOrganizationId)
-        fromOrganizationName = try values.decodeIfPresent(String.self, forKey: .fromOrganizationName)
-        fromReward = try values.decodeIfPresent(String.self, forKey: .fromReward)
-        fromRewardValue = try values.decodeIfPresent(Int.self, forKey: .fromRewardValue)
-        toDate = try values.decodeIfPresent(String.self, forKey: .toDate)
-        toOrganizationId = try values.decodeIfPresent(Int.self, forKey: .toOrganizationId)
-        toOrganizationName = try values.decodeIfPresent(String.self, forKey: .toOrganizationName)
-        toReward = try values.decodeIfPresent(String.self, forKey: .toReward)
-        toRewardValue = try values.decodeIfPresent(Int.self, forKey: .toRewardValue)
-        fromRewardTypeId = try values.decodeIfPresent(Int.self, forKey: .fromRewardTypeId)
-        toRewardTypeId = try values.decodeIfPresent(Int.self, forKey: .toRewardTypeId)
-        toRewardsListId = try values.decodeIfPresent(Int.self, forKey: .toRewardsListId)
-        fromRewardTypeName = try values.decodeIfPresent(String.self, forKey: .fromRewardTypeName)
-        toRewardTypeName = try values.decodeIfPresent(String.self, forKey: .toRewardTypeName)
-        toRewardsListName = try values.decodeIfPresent(String.self, forKey: .toRewardsListName)
-        toPhoto = try ToPhoto(from: decoder)
-        toAccessType = try values.decodeIfPresent(Int.self, forKey: .toAccessType)
-        likedCount = try values.decodeIfPresent(Int.self, forKey: .likedCount)
-        requestedCount = try values.decodeIfPresent(Int.self, forKey: .requestedCount)
-        confirmedCount = try values.decodeIfPresent(Int.self, forKey: .confirmedCount)
-        currentPoints = try values.decodeIfPresent(Int.self, forKey: .currentPoints)
-        currentCredit = try values.decodeIfPresent(Int.self, forKey: .currentCredit)
-        isLikedByUser = try values.decodeIfPresent(Bool.self, forKey: .isLikedByUser)
-        commentCount = try values.decodeIfPresent(Int.self, forKey: .commentCount)
-    }
-    
+
 }

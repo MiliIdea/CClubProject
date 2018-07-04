@@ -11,7 +11,7 @@ import Foundation
 
 class GetCommentRequestModel{
     
-    init(rowID : String! , subject : CommentsSubject!) {
+    init(rowID : String! , subject : CommentsSubject! , pageNum : Int! , pageSize : Int!) {
         var subjectS : String = ""
         
         switch subject {
@@ -28,7 +28,7 @@ class GetCommentRequestModel{
             subjectS = "1000147"
         }
 
-        param = [ "pageNo":1 , "pageSize":100 ,"params":[["condition":"EQUAL","key":"useCase.rowId","value":subjectS],["condition":"EQUAL","key":"subjectId","value":rowID]],"ticket":(App.loginRes?.ticket)!]
+        param = [ "pageNo":pageNum , "pageSize":pageSize ,"params":[["condition":"EQUAL","key":"useCase.rowId","value":subjectS],["condition":"EQUAL","key":"subjectId","value":rowID]],"ticket":(App.loginRes?.ticket)!]
         
     }
     

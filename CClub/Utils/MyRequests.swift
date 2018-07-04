@@ -249,6 +249,21 @@ public class MyRequests {
     }
     
     
+    static func getComment(vc : UIViewController , subject : String  , rowId : CommentsSubject , _ pageNum : Int = 1 , _ pageSize : Int = 100 ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<[CommentRes]>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.getComment, method: .post , parameters: GetCommentRequestModel.init(rowID: subject, subject: rowId , pageNum : pageNum , pageSize : pageSize).getParams(), encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<[CommentRes]>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
+    
+    
     
     
 }

@@ -10,6 +10,18 @@ import UIKit
 
 class ContactViewController: UIViewController {
 
+    @IBOutlet var web: UILabel!
+    @IBOutlet var email: UILabel!
+    @IBOutlet var address: UILabel!
+    @IBOutlet var phone: UILabel!
+    
+    @IBOutlet var mapImage: UIImageView!
+    
+    @IBOutlet var phoneButton: UIButton!
+    @IBOutlet var routingButton: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,14 +34,12 @@ class ContactViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func call(_ sender: Any) {
     }
-    */
+    
+    @IBAction func routing(_ sender: Any) {
+    }
+    
+    
 
 }
