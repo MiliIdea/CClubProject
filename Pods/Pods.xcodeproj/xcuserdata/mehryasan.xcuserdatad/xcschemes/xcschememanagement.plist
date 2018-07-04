@@ -102,28 +102,28 @@
 			<key>orderHint</key>
 			<integer>14</integer>
 		</dict>
-		<key>MiniLayout.xcscheme</key>
+		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
-		<key>MultiSlider.xcscheme</key>
+		<key>PagingTableView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
-		<key>ObjectMapper.xcscheme</key>
+		<key>Pods-CClub.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>17</integer>
 		</dict>
-		<key>Pods-CClub.xcscheme</key>
+		<key>QRCode.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -142,6 +142,13 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
+			<integer>21</integer>
+		</dict>
+		<key>Spring.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
 			<integer>20</integer>
 		</dict>
 		<key>Toast-Swift.xcscheme</key>
@@ -149,14 +156,28 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>21</integer>
+			<integer>22</integer>
+		</dict>
+		<key>UICheckbox.Swift-UICheckbox.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>24</integer>
+		</dict>
+		<key>UICheckbox.Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>23</integer>
 		</dict>
 		<key>UIColor_Hex_Swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>25</integer>
 		</dict>
 		<key>lottie-ios.xcscheme</key>
 		<dict>

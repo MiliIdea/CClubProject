@@ -1,23 +1,20 @@
 //
-//  ScoreTableViewCell.swift
+//  ChatTableViewCell.swift
 //  CClub
 //
-//  Created by MehrYasan on 6/18/18.
+//  Created by MehrYasan on 7/3/18.
 //  Copyright © 2018 Milad Karimi. All rights reserved.
 //
 
 import UIKit
 
-class ScoreTableViewCell: UITableViewCell {
+class ChatTableViewCell: UITableViewCell {
 
-    @IBOutlet var title: UILabel!
+    @IBOutlet var profileImage: DesignableImageView!
     
-    @IBOutlet var organizationName: UILabel!
+    @IBOutlet var nameLabel: UILabel!
     
-    @IBOutlet var points: UILabel!
-    
-    @IBOutlet var imageIcon: UILabel!
-    
+    @IBOutlet var txtView: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

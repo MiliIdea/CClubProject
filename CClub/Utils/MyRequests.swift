@@ -22,6 +22,14 @@ public class MyRequests {
         if(res != nil){
             if(res?.done)!{
                 completionHandler(res)
+            }else if(res?.errorCode == "USER_EXPIRED"){
+                App.defaults.set(nil, forKey: DefaultStrings.loginRes)
+                for controller in vc.navigationController!.viewControllers as Array {
+                    if controller.isKind(of: IntroViewController.self) {
+                        vc.navigationController!.popToViewController(controller, animated: true)
+                        break
+                    }
+                }
             }else{
                 vc.view.makeToast(res?.errorDesc)
             }
@@ -116,6 +124,25 @@ public class MyRequests {
         
     }
     
+    
+    static func scoreListForClub(vc : UIViewController ,_ withLoading : Bool = true ,organizationID : String, completionHandler: @escaping (ResponseModel<[ScoreListRes]>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.scoreList, method: .post , parameters: ["params":[["condition":"EQUAL","key": organizationID,"value":"1000"]],"ticket" : App.loginRes?.ticket ?? "" ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<[ScoreListRes]>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
+    
     static func newsList(vc : UIViewController ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<String>?) -> Void){
         
         var l : LoadingViewController? = nil
@@ -144,11 +171,27 @@ public class MyRequests {
         
     }
     
+    
+    static func giftListForClub(vc : UIViewController ,_ withLoading : Bool = true , organizationID : String , completionHandler: @escaping (ResponseModel<[GiftListRes]>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.giftList, method: .post , parameters: ["ticket" : App.loginRes?.ticket ?? "" ,"params":[["condition":"EQUAL","key": organizationID ,"value":"1000"]] , "pageNo" : 1 , "pageSize" : 10 ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<[GiftListRes]>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
+    
+    
     static func myClubsList(vc : UIViewController ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<[MyClubsRes]>?) -> Void){
         
         var l : LoadingViewController? = nil
         if(withLoading){l = App.showLoading(vc: vc)}
-        request(URLs.getListOfMyClubs, method: .post , parameters: ["ticket" : App.loginRes?.ticket! , "pageNo" : 1 , "pageSize" : 10 ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<[MyClubsRes]>>) in
+        request(URLs.getListOfMyClubs, method: .post , parameters: ["ticket" : App.loginRes?.ticket ?? "" , "pageNo" : 1 , "pageSize" : 10 ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<[MyClubsRes]>>) in
             if(withLoading){l!.disView()}
             resHandler(vc , res: response.result.value){ res in
                 completionHandler(res)
@@ -160,9 +203,50 @@ public class MyRequests {
     
     
     
+    static func getInfoClub(vc : UIViewController ,_ withLoading : Bool = true , organizationID : String , completionHandler: @escaping (ResponseModel<GetInfoClubRes>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.getInfoClub, method: .post , parameters: ["rowId" : organizationID , "ticket" : App.loginRes?.ticket ?? ""], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<GetInfoClubRes>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
     
     
     
+    static func getProfile(vc : UIViewController ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<GetProfileRes>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.getProfile, method: .post , parameters: ["ticket" : App.loginRes?.ticket! ?? ""], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<GetProfileRes>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
+    
+    
+    static func getLevel(vc : UIViewController ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<GetLevelRes>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.getProfile, method: .post , parameters: ["ticket" : App.loginRes?.ticket! ?? ""], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<GetLevelRes>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
     
     
     

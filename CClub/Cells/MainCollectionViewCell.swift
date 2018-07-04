@@ -15,6 +15,7 @@ class MainCollectionViewCell: UICollectionViewCell {
     @IBOutlet var points: UILabel!
     @IBOutlet var awardImage: UIImageView!
     @IBOutlet var pointsLabel: UILabel!
+    @IBOutlet var backImageLabel: UILabel!
     
     
     override func awakeFromNib() {

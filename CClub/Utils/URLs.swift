@@ -14,7 +14,7 @@ public class URLs {
     
     static let server = "https://my.c-club.ir/cclub/service/"
     
-    static let imageServer = "https://my.c-club.ir/cclub/service/file/image/"
+    static let imageServer = "https://my.c-club.ir/cclub/service/file/img/"
     
     static let login = server + "verification/verifyAndLogin"
     
@@ -30,6 +30,12 @@ public class URLs {
     
     static let getListOfMyClubs = server + "personOrganizationRelation/listMobile"
     
+    static let getInfoClub = server + "organization/findOneMobile"
+    
     static let getNews = server + "news/list"
+    
+    static let getProfile = server + "user/profileMobile"
+    
+    static let getLevel = server + "levelAssign/getLevel"
     
 }

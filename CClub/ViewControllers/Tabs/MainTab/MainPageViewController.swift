@@ -8,8 +8,9 @@
 
 import UIKit
 import Kingfisher
+import UIColor_Hex_Swift
 
-class MainPageViewController: UIViewController ,UICollectionViewDelegate , UICollectionViewDataSource{
+class MainPageViewController: UIViewController ,UICollectionViewDelegate , UICollectionViewDataSource {
 
     @IBOutlet var giftCollection: UICollectionView!
     @IBOutlet var scoreCollection: UICollectionView!
@@ -17,6 +18,7 @@ class MainPageViewController: UIViewController ,UICollectionViewDelegate , UICol
     @IBOutlet var newsCollection: UICollectionView!
     @IBOutlet var myScrollView: UIScrollView!
     @IBOutlet var viewInScrollView: UIView!
+    @IBOutlet var sliderCollection: UICollectionView!
     
     
     var g = false
@@ -50,6 +52,10 @@ class MainPageViewController: UIViewController ,UICollectionViewDelegate , UICol
         self.newsCollection.register(UINib(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MainCollectionViewCell")
         self.newsCollection.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
         
+        self.sliderCollection.delegate = self
+        self.sliderCollection.dataSource = self
+        self.sliderCollection.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        
         self.myScrollView.contentSize = self.viewInScrollView.frame.size
         
         self.callDatas()
@@ -64,15 +70,39 @@ class MainPageViewController: UIViewController ,UICollectionViewDelegate , UICol
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if(collectionView == self.sliderCollection){
+            
+            let cell2 : UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "sliderCell", for: indexPath as IndexPath)
+            cell2.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+            
+            if(indexPath.item == 0){
+                (cell2.viewWithTag(10) as! UIImageView).image = UIImage.init(named: "image1")
+                return cell2
+            }else if(indexPath.item == 1){
+                (cell2.viewWithTag(10) as! UIImageView).image = UIImage.init(named: "image2")
+                return cell2
+            }else if(indexPath.item == 2){
+                (cell2.viewWithTag(10) as! UIImageView).image = UIImage.init(named: "image3")
+                return cell2
+            }
+            return cell2
+            
+        }
+        
         let cell : MainCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath as IndexPath) as! MainCollectionViewCell
         
         if(collectionView == self.giftCollection){
             
             cell.pointsLabel.text = "امتیاز لازم"
-            cell.awardImage.kf.setImage(with: URL.init(string: URLs.imageServer + ((App.giftList[indexPath.item].toPhoto?.path) ?? "").replacingOccurrences(of: "//", with: "-")))
+            let s = URLs.imageServer + ((App.giftList[indexPath.item].toPhoto?.path) ?? "").replacingOccurrences(of: "\\", with: "-")
+            cell.awardImage.kf.setImage(with: URL.init(string: s))
             cell.club.text = App.giftList[indexPath.item].fromOrganizationName
             cell.points.text = (App.giftList[indexPath.item].fromRewardValue)?.description
             cell.awardName.text = App.giftList[indexPath.item].toRewardsListName
+            cell.backImageLabel.backgroundColor = UIColor("D0CCCC")
+            cell.backImageLabel.text = ""
+            cell.backImageLabel.textColor = UIColor.gray
             
             cell.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
             return cell
@@ -83,6 +113,9 @@ class MainPageViewController: UIViewController ,UICollectionViewDelegate , UICol
             cell.awardName.text = App.scoreList[indexPath.item].reward
             cell.club.text = ""
             cell.awardImage.image = UIImage.init(named: "")
+            cell.backImageLabel.text = App.getScoreIcon(id: (App.scoreList[indexPath.item].eventType?.rowId)!)
+            cell.backImageLabel.backgroundColor = App.getScoreColor(id: (App.scoreList[indexPath.item].eventType?.rowId)!)
+            cell.backImageLabel.textColor = UIColor.white
             
             cell.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
             return cell
@@ -91,8 +124,10 @@ class MainPageViewController: UIViewController ,UICollectionViewDelegate , UICol
             cell.pointsLabel.text = "جمع امتیاز"
             cell.points.text = (App.myClubs[indexPath.item].point)?.description
             cell.awardName.text = App.myClubs[indexPath.item].title
-            cell.club.text = ""
-            cell.awardImage.image = UIImage.init(named: "")
+            cell.club.text = App.myClubs[indexPath.item].closestRewardName
+            cell.backImageLabel.alpha = 0
+            let s = URLs.imageServer + ((App.myClubs[indexPath.item].image?.path) ?? "").replacingOccurrences(of: "\\", with: "-")
+            cell.awardImage.kf.setImage(with: URL.init(string: s))
             
             cell.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
             return cell
@@ -116,6 +151,8 @@ class MainPageViewController: UIViewController ,UICollectionViewDelegate , UICol
             return App.myClubs.count
         }else if(collectionView == self.newsCollection){
             return 0
+        }else if(collectionView == self.sliderCollection){
+            return 3
         }else{
             return 0
         }
@@ -143,14 +180,14 @@ class MainPageViewController: UIViewController ,UICollectionViewDelegate , UICol
     func callDatas(){
         l = App.showLoading(vc: self)
         MyRequests.giftList(vc: self , false){res in
-            if(res != nil){
+            if(res != nil && res?.result != nil){
                 App.giftList = res!.result!
             }
             self.g = true
             self.disLoading()
         }
         MyRequests.scoreList(vc: self, false){res in
-            if(res != nil){
+            if(res != nil && res?.result != nil){
                 App.scoreList = res!.result!
             }
             self.s = true
@@ -161,7 +198,7 @@ class MainPageViewController: UIViewController ,UICollectionViewDelegate , UICol
             self.disLoading()
         }
         MyRequests.myClubsList(vc: self, false){res in
-            if(res != nil){
+            if(res != nil && res?.result != nil){
                 App.myClubs = res!.result!
             }
             self.mc = true

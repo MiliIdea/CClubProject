@@ -19,14 +19,15 @@ PODS:
   - Kingfisher (4.7.0)
   - lottie-ios (2.5.0)
   - MapKitGoogleStyler (0.1.1)
-  - MiniLayout (1.2.1)
-  - MultiSlider (1.4):
-    - MiniLayout
   - ObjectMapper (3.1.0)
   - OneSignal (2.8.4)
+  - PagingTableView (0.1.0)
+  - QRCode (2.0)
   - RangeSeekSlider (1.7.0)
+  - Spring (1.0.5)
   - SWXMLHash (4.0.0)
   - Toast-Swift (3.0.1)
+  - UICheckbox.Swift (1.0.0)
   - UIColor_Hex_Swift (4.0.1)
 
 DEPENDENCIES:
@@ -43,12 +44,15 @@ DEPENDENCIES:
   - Kingfisher (~> 4.0)
   - lottie-ios
   - MapKitGoogleStyler
-  - MultiSlider
   - ObjectMapper (~> 3.1)
   - OneSignal
+  - PagingTableView
+  - QRCode
   - RangeSeekSlider
+  - Spring (from `https://github.com/MengTo/Spring.git`)
   - SWXMLHash (~> 4.0.0)
   - Toast-Swift
+  - UICheckbox.Swift
   - UIColor_Hex_Swift (~> 4.0.1)
 
 SPEC REPOS:
@@ -68,14 +72,24 @@ SPEC REPOS:
     - Kingfisher
     - lottie-ios
     - MapKitGoogleStyler
-    - MiniLayout
-    - MultiSlider
     - ObjectMapper
     - OneSignal
+    - PagingTableView
+    - QRCode
     - RangeSeekSlider
     - SWXMLHash
     - Toast-Swift
+    - UICheckbox.Swift
     - UIColor_Hex_Swift
+
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: c540239f3590bbaf4a35c3959c329dd5ed4e3eee
+    :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
   AFDateHelper: 4ad66fb19503041fbba8a3018cb7ef9c71b2ff88
@@ -93,15 +107,17 @@ SPEC CHECKSUMS:
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   MapKitGoogleStyler: 8efdceb664fc1748a62a9e3b50a34b67a34247bc
-  MiniLayout: 9ee6ff0d73c1c2af09251e062e9b45d012e446fb
-  MultiSlider: 1299e7eac043868c2adc8261ec9be2ea6ebec456
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   OneSignal: 7218a5a787f6685de81bdb487e696439e8c8f59b
+  PagingTableView: ba7869ff22f7cf3f8b2190b0314688d2cb0e46c4
+  QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
   RangeSeekSlider: 0386c5a9aa5ebcb2fa5238e8a627280cf46c7c0a
+  Spring: 3c7666eccefdeb87140008dc81043f89f8dbb787
   SWXMLHash: 6bbc0bf72975a18ceda469fb7d6a886a26d81694
   Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
+  UICheckbox.Swift: 85715689206fac5bae38b308f19c2a3e00442c3b
   UIColor_Hex_Swift: c5ff88470499383b8fd85302d59344bb24ba9436
 
-PODFILE CHECKSUM: c3a518c5d64006193ad733bce0f8ac9cfe09186d
+PODFILE CHECKSUM: e45237408c46bd67b4bf29a19e86359d3a6f273c
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3

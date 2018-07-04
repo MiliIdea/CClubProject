@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
                     print(error)
                 }
                 let appDelegate = UIApplication.shared.delegate! as! AppDelegate
-                let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "MyTabBarController")
+                let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "MainTabBarController")
                 appDelegate.window?.rootViewController = initialViewController
                 appDelegate.window?.makeKeyAndVisible()
             }

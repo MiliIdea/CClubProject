@@ -14,6 +14,7 @@ struct ResponseModel <T : Codable> : Codable {
     let allDataCount : Int?
     let result : T?
     let errorDesc : String?
+    let errorCode : String?
     
     enum CodingKeys: String, CodingKey {
         
@@ -21,6 +22,7 @@ struct ResponseModel <T : Codable> : Codable {
         case resultCountAll = "resultCountAll"
         case allDataCount = "allDataCount"
         case errorDesc = "errorDesc"
+        case errorCode = "errorCode"
         case result
     }
     

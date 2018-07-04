@@ -1,22 +1,18 @@
 //
-//  ScoreTableViewCell.swift
+//  NotificationTableViewCell.swift
 //  CClub
 //
-//  Created by MehrYasan on 6/18/18.
+//  Created by MehrYasan on 7/4/18.
 //  Copyright © 2018 Milad Karimi. All rights reserved.
 //
 
 import UIKit
 
-class ScoreTableViewCell: UITableViewCell {
+class NotificationTableViewCell: UITableViewCell {
 
-    @IBOutlet var title: UILabel!
+    @IBOutlet var clubName: UILabel!
     
-    @IBOutlet var organizationName: UILabel!
-    
-    @IBOutlet var points: UILabel!
-    
-    @IBOutlet var imageIcon: UILabel!
+    @IBOutlet var switchNotify: UISwitch!
     
     
     override func awakeFromNib() {

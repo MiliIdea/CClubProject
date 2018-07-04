@@ -19,7 +19,7 @@ class RegisterViewController : UIViewController {
         super.viewDidLoad()
         if(App.loginRes != nil && App.loginRes?.ticket != nil){
             let appDelegate = UIApplication.shared.delegate! as! AppDelegate
-            let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "MyTabBarController")
+            let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "MainTabBarController")
             appDelegate.window?.rootViewController = initialViewController
             appDelegate.window?.makeKeyAndVisible()
         }
@@ -55,14 +55,19 @@ class RegisterViewController : UIViewController {
             }
             App.defaults.set(true, forKey: DefaultStrings.isItGuest)
             let appDelegate = UIApplication.shared.delegate! as! AppDelegate
-            let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "MyTabBarController")
+            let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "MainTabBarController")
             appDelegate.window?.rootViewController = initialViewController
             appDelegate.window?.makeKeyAndVisible()
         }
         
     }
     
+    @IBAction func dismissView(_ sender: Any) {
+         self.view.endEditing(true)
+    }
 }
+
+
 
 /*
  

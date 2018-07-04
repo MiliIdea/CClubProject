@@ -18,6 +18,7 @@ struct MyClubsRes : Codable {
 	let title : String?
 	let point : Int?
 	let credit : Int?
+    let closestRewardName : String?
 	let image : Image?
 
 	enum CodingKeys: String, CodingKey {
@@ -27,6 +28,7 @@ struct MyClubsRes : Codable {
 		case title = "title"
 		case point = "point"
 		case credit = "credit"
+        case closestRewardName = "closestRewardName"
 		case image
 	}
 

@@ -25,6 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         ToastManager.shared.isTapToDismissEnabled = true
         ToastManager.shared.isQueueEnabled = true
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let initialViewController = storyboard.instantiateViewController(withIdentifier: "IntroViewController")
+//        self.window?.rootViewController = initialViewController
+//        self.window?.makeKeyAndVisible()
         return true
     }
 
