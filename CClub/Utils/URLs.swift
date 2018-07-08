@@ -40,4 +40,12 @@ public class URLs {
     
     static let getComment = server + "comment/list"
     
+    static let getNotificationSettings = server + "appSettings/notifications"
+    
+    static let saveChangeNotification = server + "appSettings/saveNotifications"
+    
+    static let editProfile = server + "coUserService/profileImprovementFAKE"
+    
+    static let saveImage = server + "file/save"
+    
 }

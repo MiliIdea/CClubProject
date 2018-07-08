@@ -36,9 +36,15 @@ class RegisterViewController : UIViewController {
         
         MyRequests.register(vc: self, phone: phoneNumber.text!){ res in
 
-            let vC : LoginViewController = (self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController"))! as! LoginViewController
-            vC.phoneNumber = self.phoneNumber.text!
-            self.navigationController?.pushViewController(vC, animated: true)
+//            let vC : LoginViewController = (self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController"))! as! LoginViewController
+//            vC.phoneNumber = self.phoneNumber.text!
+//            self.navigationController?.pushViewController(vC, animated: true)
+
+            let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+            let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "LoginViewController")
+            (initialViewController as! LoginViewController).phoneNumber = self.phoneNumber.text!
+            appDelegate.window?.rootViewController = initialViewController
+            appDelegate.window?.makeKeyAndVisible()
             
         }
         

@@ -41,6 +41,7 @@
 		103339E120C41891002F4220 /* GetInfoClubRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103339E020C41891002F4220 /* GetInfoClubRequestModel.swift */; };
 		103339E320C419E2002F4220 /* GetHistoryActivityClubRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103339E220C419E2002F4220 /* GetHistoryActivityClubRequestModel.swift */; };
 		103339E520C41A95002F4220 /* SaveChangeNotificationRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103339E420C41A95002F4220 /* SaveChangeNotificationRequestModel.swift */; };
+		1036DF3420F2279000A81F91 /* UploadImageRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036DF3320F2279000A81F91 /* UploadImageRequestModel.swift */; };
 		104C6CBC20D792430084E2B2 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C6CBA20D792430084E2B2 /* MainCollectionViewCell.swift */; };
 		104C6CBD20D792430084E2B2 /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104C6CBB20D792430084E2B2 /* MainCollectionViewCell.xib */; };
 		104C6CBF20D7A5A90084E2B2 /* ToPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C6CBE20D7A5A90084E2B2 /* ToPhoto.swift */; };
@@ -78,6 +79,10 @@
 		1092F26E20ECDF8900A41B0C /* CommentRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1092F26B20ECDF8800A41B0C /* CommentRes.swift */; };
 		1092F26F20ECDF8900A41B0C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1092F26C20ECDF8800A41B0C /* User.swift */; };
 		1092F27020ECDF8900A41B0C /* Usecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1092F26D20ECDF8800A41B0C /* Usecase.swift */; };
+		109848F220F0C7E2007F61AC /* PermissionPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109848F120F0C7E2007F61AC /* PermissionPopupViewController.swift */; };
+		109848F420F0C7F5007F61AC /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109848F320F0C7F5007F61AC /* QRViewController.swift */; };
+		109848F620F0C82B007F61AC /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109848F520F0C82B007F61AC /* EditProfileViewController.swift */; };
+		109848F820F0F4B3007F61AC /* GetNotificationRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109848F720F0F4B3007F61AC /* GetNotificationRes.swift */; };
 		10C942B620A864160053B1B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C942B520A864160053B1B1 /* AppDelegate.swift */; };
 		10C942B820A864160053B1B1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C942B720A864160053B1B1 /* RegisterViewController.swift */; };
 		10C942BB20A864160053B1B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10C942B920A864160053B1B1 /* Main.storyboard */; };
@@ -134,6 +139,7 @@
 		103339E020C41891002F4220 /* GetInfoClubRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfoClubRequestModel.swift; sourceTree = "<group>"; };
 		103339E220C419E2002F4220 /* GetHistoryActivityClubRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHistoryActivityClubRequestModel.swift; sourceTree = "<group>"; };
 		103339E420C41A95002F4220 /* SaveChangeNotificationRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveChangeNotificationRequestModel.swift; sourceTree = "<group>"; };
+		1036DF3320F2279000A81F91 /* UploadImageRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageRequestModel.swift; sourceTree = "<group>"; };
 		104C6CBA20D792430084E2B2 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		104C6CBB20D792430084E2B2 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
 		104C6CBE20D7A5A90084E2B2 /* ToPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToPhoto.swift; sourceTree = "<group>"; };
@@ -171,6 +177,10 @@
 		1092F26B20ECDF8800A41B0C /* CommentRes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentRes.swift; sourceTree = "<group>"; };
 		1092F26C20ECDF8800A41B0C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1092F26D20ECDF8800A41B0C /* Usecase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usecase.swift; sourceTree = "<group>"; };
+		109848F120F0C7E2007F61AC /* PermissionPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionPopupViewController.swift; sourceTree = "<group>"; };
+		109848F320F0C7F5007F61AC /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
+		109848F520F0C82B007F61AC /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		109848F720F0F4B3007F61AC /* GetNotificationRes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNotificationRes.swift; sourceTree = "<group>"; };
 		10C942B220A864160053B1B1 /* CClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10C942B520A864160053B1B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10C942B720A864160053B1B1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +242,7 @@
 				103339E020C41891002F4220 /* GetInfoClubRequestModel.swift */,
 				103339E220C419E2002F4220 /* GetHistoryActivityClubRequestModel.swift */,
 				103339E420C41A95002F4220 /* SaveChangeNotificationRequestModel.swift */,
+				1036DF3320F2279000A81F91 /* UploadImageRequestModel.swift */,
 			);
 			path = RequestModels;
 			sourceTree = "<group>";
@@ -249,6 +260,7 @@
 				1004D06020DE614000B4ACCD /* Person.swift */,
 				1004D06320DE626E00B4ACCD /* GetLevelRes.swift */,
 				1028C87320E0FA5B00BE328C /* GetInfoClubRes.swift */,
+				109848F720F0F4B3007F61AC /* GetNotificationRes.swift */,
 			);
 			path = ResponseModels;
 			sourceTree = "<group>";
@@ -281,12 +293,12 @@
 		104C6CCD20D7BF3B0084E2B2 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				108D369F20DA51F800D6BFEC /* MainTabBarController.swift */,
+				109848F020F0C765007F61AC /* ScoreTab */,
+				109848EF20F0C59C007F61AC /* ProfileTab */,
 				1092F26220ECB3F900A41B0C /* MainTab */,
 				105164B120EBA50E0097F4DE /* GiftDetail */,
 				1076018320DF7A6C00ACF9F1 /* ClubDetail */,
-				104C6CCE20D7BF640084E2B2 /* ScoreViewController.swift */,
-				104C6CD420D7C0330084E2B2 /* ProfileViewController.swift */,
-				108D369F20DA51F800D6BFEC /* MainTabBarController.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -331,11 +343,11 @@
 		1079129C20A986D800FDBE9E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				104C6CCD20D7BF3B0084E2B2 /* Tabs */,
-				10C942B720A864160053B1B1 /* RegisterViewController.swift */,
-				103339C020C3D7A2002F4220 /* LoadingViewController.swift */,
-				10E0A81220D6719F0081E4E5 /* LoginViewController.swift */,
 				108D369B20DA192E00D6BFEC /* IntroViewController.swift */,
+				10E0A81220D6719F0081E4E5 /* LoginViewController.swift */,
+				10C942B720A864160053B1B1 /* RegisterViewController.swift */,
+				104C6CCD20D7BF3B0084E2B2 /* Tabs */,
+				103339C020C3D7A2002F4220 /* LoadingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -348,6 +360,25 @@
 				1092F26720ECB58B00A41B0C /* ContactViewController.swift */,
 			);
 			path = MainTab;
+			sourceTree = "<group>";
+		};
+		109848EF20F0C59C007F61AC /* ProfileTab */ = {
+			isa = PBXGroup;
+			children = (
+				104C6CD420D7C0330084E2B2 /* ProfileViewController.swift */,
+				109848F120F0C7E2007F61AC /* PermissionPopupViewController.swift */,
+				109848F320F0C7F5007F61AC /* QRViewController.swift */,
+				109848F520F0C82B007F61AC /* EditProfileViewController.swift */,
+			);
+			path = ProfileTab;
+			sourceTree = "<group>";
+		};
+		109848F020F0C765007F61AC /* ScoreTab */ = {
+			isa = PBXGroup;
+			children = (
+				104C6CCE20D7BF640084E2B2 /* ScoreViewController.swift */,
+			);
+			path = ScoreTab;
 			sourceTree = "<group>";
 		};
 		10C942A920A864160053B1B1 = {
@@ -611,6 +642,7 @@
 				10E0A81D20D76E690081E4E5 /* Organization.swift in Sources */,
 				1076018520DF7ABB00ACF9F1 /* ClubDetailViewController.swift in Sources */,
 				104C6CC220D7B3830084E2B2 /* ScoreTableViewCell.swift in Sources */,
+				109848F620F0C82B007F61AC /* EditProfileViewController.swift in Sources */,
 				103339B720C3D3C8002F4220 /* App.swift in Sources */,
 				105164B820EBBB7A0097F4DE /* ChatTableViewCell.swift in Sources */,
 				1092F27020ECDF8900A41B0C /* Usecase.swift in Sources */,
@@ -635,12 +667,15 @@
 				103339B520C3D3BB002F4220 /* URLs.swift in Sources */,
 				1004D06220DE614100B4ACCD /* Person.swift in Sources */,
 				10C942B620A864160053B1B1 /* AppDelegate.swift in Sources */,
+				109848F220F0C7E2007F61AC /* PermissionPopupViewController.swift in Sources */,
 				1004D06820DE626E00B4ACCD /* GetLevelRes.swift in Sources */,
 				103339CF20C3FC18002F4220 /* GetListRequestModel.swift in Sources */,
 				10E0A81320D6719F0081E4E5 /* LoginViewController.swift in Sources */,
+				109848F420F0C7F5007F61AC /* QRViewController.swift in Sources */,
 				103339B920C3D455002F4220 /* DefaultStrings.swift in Sources */,
 				107912A720A9876D00FDBE9E /* AdvertisementTableViewCell.swift in Sources */,
 				1092F26020EC9EED00A41B0C /* NotificationTableViewCell.swift in Sources */,
+				109848F820F0F4B3007F61AC /* GetNotificationRes.swift in Sources */,
 				10E0A81F20D76E690081E4E5 /* ScoreListRes.swift in Sources */,
 				10E0A82B20D76F760081E4E5 /* Image.swift in Sources */,
 				104C6CD120D7BF720084E2B2 /* GiftViewController.swift in Sources */,
@@ -657,6 +692,7 @@
 				1092F26F20ECDF8900A41B0C /* User.swift in Sources */,
 				1004D06B20DE626E00B4ACCD /* OrganizationPersonLevel.swift in Sources */,
 				103339C120C3D7A3002F4220 /* LoadingViewController.swift in Sources */,
+				1036DF3420F2279000A81F91 /* UploadImageRequestModel.swift in Sources */,
 				104C6CCF20D7BF640084E2B2 /* ScoreViewController.swift in Sources */,
 				104C6CCB20D7B9400084E2B2 /* ClubTableViewCell.swift in Sources */,
 				10E0A81C20D76E690081E4E5 /* CreatedBy.swift in Sources */,

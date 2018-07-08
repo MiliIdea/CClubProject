@@ -1,25 +1,21 @@
 //
-//  ContactViewController.swift
+//  QRViewController.swift
 //  CClub
 //
-//  Created by MehrYasan on 7/4/18.
+//  Created by MehrYasan on 7/7/18.
 //  Copyright © 2018 Milad Karimi. All rights reserved.
 //
 
 import UIKit
 
-class ContactViewController: UIViewController {
+class QRViewController: UIViewController {
 
-    @IBOutlet var web: UILabel!
-    @IBOutlet var email: UILabel!
-    @IBOutlet var address: UILabel!
-    @IBOutlet var phone: UILabel!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var mobile: UILabel!
+    @IBOutlet var joinAddress: UILabel!
+    @IBOutlet var unicCode: UILabel!
     
-    @IBOutlet var mapImage: UIImageView!
-    
-    @IBOutlet var phoneButton: UIButton!
-    @IBOutlet var routingButton: UIButton!
-    
+    @IBOutlet var qRImageView: UIImageView!
     
     
     override func viewDidLoad() {
@@ -34,15 +30,51 @@ class ContactViewController: UIViewController {
     }
     
 
-    @IBAction func call(_ sender: Any) {
-    }
-    
-    @IBAction func routing(_ sender: Any) {
-    }
-    
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    
+    
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

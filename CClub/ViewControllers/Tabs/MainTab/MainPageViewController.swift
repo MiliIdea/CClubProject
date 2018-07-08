@@ -92,6 +92,12 @@ class MainPageViewController: UIViewController ,UICollectionViewDelegate , UICol
         
         let cell : MainCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath as IndexPath) as! MainCollectionViewCell
         
+        cell.layer.masksToBounds = false
+        cell.layer.shadowOffset = CGSize.init(width : 0,height: 0)
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOpacity = 0.23
+        cell.layer.shadowRadius = 4
+        
         if(collectionView == self.giftCollection){
             
             cell.pointsLabel.text = "امتیاز لازم"
@@ -127,6 +133,7 @@ class MainPageViewController: UIViewController ,UICollectionViewDelegate , UICol
             cell.club.text = App.myClubs[indexPath.item].closestRewardName
             cell.backImageLabel.alpha = 0
             let s = URLs.imageServer + ((App.myClubs[indexPath.item].image?.path) ?? "").replacingOccurrences(of: "\\", with: "-")
+            print("imgUrl : : " + s)
             cell.awardImage.kf.setImage(with: URL.init(string: s))
             
             cell.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
@@ -161,10 +168,24 @@ class MainPageViewController: UIViewController ,UICollectionViewDelegate , UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if(collectionView == self.giftCollection){
-            
+            let c = App.giftList[indexPath.item]
+            MyRequests.getComment(vc: self, subject: (c.rowId?.description)!, rowId: .REWARD){ res in
+                if(res != nil && (res?.done)!){
+                    let vC : GiftDetailViewController = (self.storyboard?.instantiateViewController(withIdentifier: "GiftDetailViewController"))! as! GiftDetailViewController
+                    vC.comments = (res?.result)!
+                    vC.giftData = c
+                    self.navigationController?.pushViewController(vC, animated: true)
+                }else{
+                    self.view.makeToast(res?.errorDesc)
+                }
+            }
         }else if(collectionView == self.scoreCollection){
             
         }else if(collectionView == self.clubsCollection){
+            
+            let vC : ClubDetailViewController = (self.storyboard?.instantiateViewController(withIdentifier: "ClubDetailViewController"))! as! ClubDetailViewController
+            vC.organizationID = ((App.myClubs[indexPath.item].organizationId ?? 0).description)
+            self.navigationController?.pushViewController(vC, animated: true)
             
         }else if(collectionView == self.newsCollection){
             
@@ -223,6 +244,27 @@ class MainPageViewController: UIViewController ,UICollectionViewDelegate , UICol
     }
     
 
+    @IBAction func goSettings(_ sender: Any) {
+        
+        MyRequests.getNotificationSettings(vc: self){ res in
+            if(res?.done)!{
+                let vC : SettingsViewController = (self.storyboard?.instantiateViewController(withIdentifier: "SettingsViewController"))! as! SettingsViewController
+                vC.notifysSettings = (res?.result)!
+                self.navigationController?.pushViewController(vC, animated: true)
+            }else{
+                self.view.makeToast(res?.errorDesc)
+            }
+        }
+        
+        
+        
+    }
+    
+    
+    @IBAction func goMessages(_ sender: Any) {
+        self.view.makeToast("خبری وجود ندارد")
+    }
+    
 }
 
 

@@ -1,18 +1,20 @@
 //
-//  SendMessageViewController.swift
+//  PermissionPopupViewController.swift
 //  CClub
 //
-//  Created by MehrYasan on 7/4/18.
+//  Created by MehrYasan on 7/7/18.
 //  Copyright © 2018 Milad Karimi. All rights reserved.
 //
 
 import UIKit
 import DCKit
 
-class SendMessageViewController: UIViewController {
+class PermissionPopupViewController: UIViewController {
 
-    @IBOutlet var messageTextView: DCBorderedTextView!
-    
+    @IBOutlet var backPopup: UIView!
+    @IBOutlet var popupView: DCBorderedView!
+    @IBOutlet var titleOfPopup: UILabel!
+    @IBOutlet var descOfPopup: UILabel!
     
     
     override func viewDidLoad() {
@@ -26,15 +28,12 @@ class SendMessageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func yes(_ sender: Any) {
+    }
+    
+    @IBAction func no(_ sender: Any) {
+    }
+    
 
-    
-    
-    @IBAction func back(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func sendMessage(_ sender: Any) {
-        
-    }
-    
+
 }

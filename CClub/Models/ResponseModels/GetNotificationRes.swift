@@ -12,28 +12,17 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct User : Codable {
-	let created : String?
-	let updated : String?
-	let active : Bool?
-	let fullTitle : String?
-	let rowId : Int?
-	let fullName : String?
-	let username : String?
-	let emailIsConfirmed : Bool?
-    let file : ToPhoto?
+struct GetNotificationRes : Codable {
+	let organizationRowId : CLongLong?
+	let organizationName : String?
+	let getNotification : Bool?
 
 	enum CodingKeys: String, CodingKey {
 
-		case created = "created"
-		case updated = "updated"
-		case active = "active"
-		case fullTitle = "fullTitle"
-		case rowId = "rowId"
-		case fullName = "fullName"
-		case username = "username"
-		case emailIsConfirmed = "emailIsConfirmed"
-        case file = "file"
+		case organizationRowId = "organizationRowId"
+		case organizationName = "organizationName"
+		case getNotification = "getNotification"
 	}
+
 
 }

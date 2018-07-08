@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UICheckbox_Swift
 
 class LoginViewController: UIViewController {
 
@@ -15,6 +16,9 @@ class LoginViewController: UIViewController {
     @IBOutlet var activationCode: UITextField!
     
     @IBOutlet var invitationCode: UITextField!
+    
+    @IBOutlet var acceptTerms: UICheckbox!
+    
     
     var phoneNumber : String = ""
     
@@ -39,10 +43,13 @@ class LoginViewController: UIViewController {
     
     @IBAction func activation(_ sender: Any) {
         
-
+        if(!self.acceptTerms.isSelected){
+            self.view.makeToast("برای ورود نیاز به قبول قوانین می باشد")
+            return
+        }
         MyRequests.login(vc: self, phone: phoneNumber, code: invitationCode.text!){ res in
 
-            if(res?.done)!{
+            if(res != nil && (res?.done)!){
                 do {
                     let data = try JSONEncoder().encode(res?.result)
                     App.defaults.set(data, forKey: DefaultStrings.loginRes)

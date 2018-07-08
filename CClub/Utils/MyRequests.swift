@@ -24,14 +24,13 @@ public class MyRequests {
                 completionHandler(res)
             }else if(res?.errorCode == "USER_EXPIRED"){
                 App.defaults.set(nil, forKey: DefaultStrings.loginRes)
-                for controller in vc.navigationController!.viewControllers as Array {
-                    if controller.isKind(of: IntroViewController.self) {
-                        vc.navigationController!.popToViewController(controller, animated: true)
-                        break
-                    }
-                }
+                let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+                let initialViewController = vc.storyboard!.instantiateViewController(withIdentifier: "RegisterViewController")
+                appDelegate.window?.rootViewController = initialViewController
+                appDelegate.window?.makeKeyAndVisible()
             }else{
                 vc.view.makeToast(res?.errorDesc)
+                completionHandler(res)
             }
             
         }else{
@@ -265,6 +264,48 @@ public class MyRequests {
     
     
     
+    static func getNotificationSettings(vc : UIViewController ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<[GetNotificationRes]>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.getNotificationSettings, method: .post , parameters: ["ticket" : App.loginRes?.ticket! ?? ""], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<[GetNotificationRes]>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
+    
+    static func saveNotificationSettings(vc : UIViewController , organizationRowID : CLongLong , getNotify : Bool ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<GetNotificationRes>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.saveChangeNotification, method: .post , parameters: SaveChangeNotificationRequestModel.init(organizationRowId: organizationRowID, getNotify: getNotify).getParams(), encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<GetNotificationRes>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
+    
+    
+    static func saveProfileImage(vc : UIViewController , imageCode : Int ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<LoginRes>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.editProfile, method: .post , parameters: UploadImageRequestModel.init(imageCode: imageCode.description).getParams(), encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<LoginRes>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
     
 }
 
