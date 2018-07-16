@@ -11,6 +11,7 @@ import CoreData
 import AlamofireNetworkActivityLogger
 import IQKeyboardManagerSwift
 import Toast_Swift
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -102,5 +103,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    
+    func hasLocPermission() -> Bool{
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+            case .notDetermined, .restricted, .denied:
+                print("No access")
+                return false
+            case .authorizedAlways, .authorizedWhenInUse:
+                print("Access")
+                return true
+            }
+        } else {
+            print("Location services are not enabled")
+            return false
+        }
+    }
+    
+    
+    
 }
 

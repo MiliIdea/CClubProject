@@ -58,8 +58,15 @@ class GiftDetailViewController: UIViewController  , UITableViewDelegate , UITabl
         giftProvider.text = "اراءه دهنده این جایزه: " + (giftData?.toOrganizationName)!
         detailProvider.text = giftData?.description
         numberOfComments.text = giftData?.commentCount?.description
+        if(giftData?.isLikedByUser)!{
+            self.like("")
+        }
         commentsTable.estimatedRowHeight = 175 / 675 * self.view.frame.height
-        
+        calculateScroller()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("asd")
         calculateScroller()
     }
 
@@ -80,12 +87,18 @@ class GiftDetailViewController: UIViewController  , UITableViewDelegate , UITabl
                 self.commentsTable.reloadData()
                 self.commentsTable.frame.origin.y = self.numberOfComments.frame.height + self.numberOfComments.frame.origin.y
                 self.commentsTable.frame.size.height = (175 / 675 * self.view.frame.height) * CGFloat((giftData?.commentCount)!)
+                if((heights?.count)! >= 3 && heights![0] != nil && heights![0] != 0 && heights![1] != nil && heights![1] != 0 && heights![2] != nil && heights![2] != 0){
+                    self.commentsTable.frame.size.height = heights![0] + heights![1] + heights![2]
+                }
                 self.moreButton.alpha = 0
                 self.moreButton.frame.origin.y = self.commentsTable.frame.height + self.commentsTable.frame.origin.y
             }else{
                 self.commentsTable.reloadData()
                 self.commentsTable.frame.origin.y = self.numberOfComments.frame.height + self.numberOfComments.frame.origin.y
                 self.commentsTable.frame.size.height = (175 / 675 * self.view.frame.height) * 3
+                if((heights?.count)! >= 3 && heights![0] != nil && heights![0] != 0 && heights![1] != nil && heights![1] != 0 && heights![2] != nil && heights![2] != 0){
+                    self.commentsTable.frame.size.height = heights![0] + heights![1] + heights![2]
+                }
                 self.moreButton.frame.origin.y = self.commentsTable.frame.height + self.commentsTable.frame.origin.y
             }
         }
@@ -99,7 +112,7 @@ class GiftDetailViewController: UIViewController  , UITableViewDelegate , UITabl
         }else{
             self.scrollView.setContentOffset(.init(x: 0, y: 0), animated: true)
             self.scrollView.isScrollEnabled = true
-            self.scrollView.contentSize.height = moreButton.frame.height + moreButton.frame.origin.y
+            self.scrollView.contentSize.height = moreButton.frame.height + moreButton.frame.origin.y + 50                                      
         }
     }
     
@@ -180,14 +193,21 @@ class GiftDetailViewController: UIViewController  , UITableViewDelegate , UITabl
     
     @IBAction func setComment(_ sender: Any) {
         let vC : SendMessageViewController = (self.storyboard?.instantiateViewController(withIdentifier: "SendMessageViewController"))! as! SendMessageViewController
+        vC.rowId = (self.giftData?.rowId)!
         self.navigationController?.pushViewController(vC, animated: true)
     }
     
     @IBAction func like(_ sender: Any) {
         if(likeButton.title(for: .normal) == ""){
             likeButton.setTitle("", for: .normal)
+            MyRequests.like(vc: self, rowId: (self.giftData?.rowId)!){res in
+                
+            }
         }else{
             likeButton.setTitle("", for: .normal)
+            MyRequests.dislike(vc: self, rowId: (self.giftData?.rowId)!){res in
+                
+            }
         }
     }
     

@@ -55,9 +55,14 @@
 		104C6CD120D7BF720084E2B2 /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C6CD020D7BF720084E2B2 /* GiftViewController.swift */; };
 		104C6CD320D7BF9B0084E2B2 /* ClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C6CD220D7BF9B0084E2B2 /* ClubsViewController.swift */; };
 		104C6CD520D7C0340084E2B2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C6CD420D7C0330084E2B2 /* ProfileViewController.swift */; };
+		10504DFE20F385DA00895535 /* GetHistoryOfClubRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10504DFD20F385DA00895535 /* GetHistoryOfClubRes.swift */; };
+		10504E0020F3950600895535 /* GetQRCodeRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10504DFF20F3950600895535 /* GetQRCodeRes.swift */; };
 		105164B320EBA53E0097F4DE /* GiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105164B220EBA53E0097F4DE /* GiftDetailViewController.swift */; };
 		105164B820EBBB7A0097F4DE /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105164B620EBBB7A0097F4DE /* ChatTableViewCell.swift */; };
 		105164B920EBBB7A0097F4DE /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 105164B720EBBB7A0097F4DE /* ChatTableViewCell.xib */; };
+		10621C6220FB7DB000D3C30C /* GetInvitationCodeRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10621C6120FB7DB000D3C30C /* GetInvitationCodeRes.swift */; };
+		10621C6420FCB52700D3C30C /* GetAllContactRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10621C6320FCB52700D3C30C /* GetAllContactRes.swift */; };
+		10621C6620FCCC9F00D3C30C /* SearchInContactsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10621C6520FCCC9F00D3C30C /* SearchInContactsRequestModel.swift */; };
 		1076018520DF7ABB00ACF9F1 /* ClubDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076018420DF7ABB00ACF9F1 /* ClubDetailViewController.swift */; };
 		1078A3FC20AAAD1600F1F2AA /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078A3FB20AAAD1600F1F2AA /* MainPageViewController.swift */; };
 		1079129F20A9871C00FDBE9E /* AwardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1079129D20A9871C00FDBE9E /* AwardsTableViewCell.swift */; };
@@ -83,6 +88,10 @@
 		109848F420F0C7F5007F61AC /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109848F320F0C7F5007F61AC /* QRViewController.swift */; };
 		109848F620F0C82B007F61AC /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109848F520F0C82B007F61AC /* EditProfileViewController.swift */; };
 		109848F820F0F4B3007F61AC /* GetNotificationRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109848F720F0F4B3007F61AC /* GetNotificationRes.swift */; };
+		1098665820F9E349003F6746 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098665620F9E349003F6746 /* ContactTableViewCell.swift */; };
+		1098665920F9E349003F6746 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1098665720F9E349003F6746 /* ContactTableViewCell.xib */; };
+		1098665B20F9EAEE003F6746 /* InviteFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098665A20F9EAEE003F6746 /* InviteFriendsViewController.swift */; };
+		1098665D20FA2027003F6746 /* InvitationContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098665C20FA2027003F6746 /* InvitationContactViewController.swift */; };
 		10C942B620A864160053B1B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C942B520A864160053B1B1 /* AppDelegate.swift */; };
 		10C942B820A864160053B1B1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C942B720A864160053B1B1 /* RegisterViewController.swift */; };
 		10C942BB20A864160053B1B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10C942B920A864160053B1B1 /* Main.storyboard */; };
@@ -153,9 +162,14 @@
 		104C6CD020D7BF720084E2B2 /* GiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
 		104C6CD220D7BF9B0084E2B2 /* ClubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubsViewController.swift; sourceTree = "<group>"; };
 		104C6CD420D7C0330084E2B2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		10504DFD20F385DA00895535 /* GetHistoryOfClubRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHistoryOfClubRes.swift; sourceTree = "<group>"; };
+		10504DFF20F3950600895535 /* GetQRCodeRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetQRCodeRes.swift; sourceTree = "<group>"; };
 		105164B220EBA53E0097F4DE /* GiftDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftDetailViewController.swift; sourceTree = "<group>"; };
 		105164B620EBBB7A0097F4DE /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		105164B720EBBB7A0097F4DE /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
+		10621C6120FB7DB000D3C30C /* GetInvitationCodeRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInvitationCodeRes.swift; sourceTree = "<group>"; };
+		10621C6320FCB52700D3C30C /* GetAllContactRes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAllContactRes.swift; sourceTree = "<group>"; };
+		10621C6520FCCC9F00D3C30C /* SearchInContactsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInContactsRequestModel.swift; sourceTree = "<group>"; };
 		1076018420DF7ABB00ACF9F1 /* ClubDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDetailViewController.swift; sourceTree = "<group>"; };
 		1078A3FB20AAAD1600F1F2AA /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		1079129D20A9871C00FDBE9E /* AwardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsTableViewCell.swift; sourceTree = "<group>"; };
@@ -181,6 +195,10 @@
 		109848F320F0C7F5007F61AC /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		109848F520F0C82B007F61AC /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		109848F720F0F4B3007F61AC /* GetNotificationRes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNotificationRes.swift; sourceTree = "<group>"; };
+		1098665620F9E349003F6746 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		1098665720F9E349003F6746 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		1098665A20F9EAEE003F6746 /* InviteFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteFriendsViewController.swift; sourceTree = "<group>"; };
+		1098665C20FA2027003F6746 /* InvitationContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationContactViewController.swift; sourceTree = "<group>"; };
 		10C942B220A864160053B1B1 /* CClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10C942B520A864160053B1B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10C942B720A864160053B1B1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +261,7 @@
 				103339E220C419E2002F4220 /* GetHistoryActivityClubRequestModel.swift */,
 				103339E420C41A95002F4220 /* SaveChangeNotificationRequestModel.swift */,
 				1036DF3320F2279000A81F91 /* UploadImageRequestModel.swift */,
+				10621C6520FCCC9F00D3C30C /* SearchInContactsRequestModel.swift */,
 			);
 			path = RequestModels;
 			sourceTree = "<group>";
@@ -261,6 +280,10 @@
 				1004D06320DE626E00B4ACCD /* GetLevelRes.swift */,
 				1028C87320E0FA5B00BE328C /* GetInfoClubRes.swift */,
 				109848F720F0F4B3007F61AC /* GetNotificationRes.swift */,
+				10504DFD20F385DA00895535 /* GetHistoryOfClubRes.swift */,
+				10504DFF20F3950600895535 /* GetQRCodeRes.swift */,
+				10621C6120FB7DB000D3C30C /* GetInvitationCodeRes.swift */,
+				10621C6320FCB52700D3C30C /* GetAllContactRes.swift */,
 			);
 			path = ResponseModels;
 			sourceTree = "<group>";
@@ -336,6 +359,8 @@
 				105164B720EBBB7A0097F4DE /* ChatTableViewCell.xib */,
 				1092F25E20EC9EED00A41B0C /* NotificationTableViewCell.swift */,
 				1092F25F20EC9EED00A41B0C /* NotificationTableViewCell.xib */,
+				1098665620F9E349003F6746 /* ContactTableViewCell.swift */,
+				1098665720F9E349003F6746 /* ContactTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -369,6 +394,8 @@
 				109848F120F0C7E2007F61AC /* PermissionPopupViewController.swift */,
 				109848F320F0C7F5007F61AC /* QRViewController.swift */,
 				109848F520F0C82B007F61AC /* EditProfileViewController.swift */,
+				1098665A20F9EAEE003F6746 /* InviteFriendsViewController.swift */,
+				1098665C20FA2027003F6746 /* InvitationContactViewController.swift */,
 			);
 			path = ProfileTab;
 			sourceTree = "<group>";
@@ -533,6 +560,7 @@
 				108D369720D943D600D6BFEC /* icomoon.ttf in Resources */,
 				107912A820A9876D00FDBE9E /* AdvertisementTableViewCell.xib in Resources */,
 				107912A020A9871C00FDBE9E /* AwardsTableViewCell.xib in Resources */,
+				1098665920F9E349003F6746 /* ContactTableViewCell.xib in Resources */,
 				105164B920EBBB7A0097F4DE /* ChatTableViewCell.xib in Resources */,
 				1004D05D20DE47CC00B4ACCD /* IRANSans(FaNum)_Light.ttf in Resources */,
 				10C942C020A8641A0053B1B1 /* Assets.xcassets in Resources */,
@@ -573,6 +601,7 @@
 				"${BUILT_PRODUCTS_DIR}/MapKitGoogleStyler/MapKitGoogleStyler.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PagingTableView/PagingTableView.framework",
+				"${BUILT_PRODUCTS_DIR}/PersianDatePicker/PersianDatePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/RangeSeekSlider/RangeSeekSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
@@ -600,6 +629,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapKitGoogleStyler.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PagingTableView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PersianDatePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RangeSeekSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
@@ -646,10 +676,13 @@
 				103339B720C3D3C8002F4220 /* App.swift in Sources */,
 				105164B820EBBB7A0097F4DE /* ChatTableViewCell.swift in Sources */,
 				1092F27020ECDF8900A41B0C /* Usecase.swift in Sources */,
+				10621C6620FCCC9F00D3C30C /* SearchInContactsRequestModel.swift in Sources */,
 				103339BD20C3D595002F4220 /* MyRequests.swift in Sources */,
 				10E0A82820D76F760081E4E5 /* MyClubsRes.swift in Sources */,
 				1092F26620ECB53400A41B0C /* SettingsViewController.swift in Sources */,
 				10C942B820A864160053B1B1 /* RegisterViewController.swift in Sources */,
+				10504DFE20F385DA00895535 /* GetHistoryOfClubRes.swift in Sources */,
+				10621C6220FB7DB000D3C30C /* GetInvitationCodeRes.swift in Sources */,
 				104C6CBF20D7A5A90084E2B2 /* ToPhoto.swift in Sources */,
 				104C6CC720D7B66C0084E2B2 /* GiftTableViewCell.swift in Sources */,
 				105164B320EBA53E0097F4DE /* GiftDetailViewController.swift in Sources */,
@@ -662,11 +695,13 @@
 				103339C620C3E4C5002F4220 /* LoginRes.swift in Sources */,
 				103339CD20C3F616002F4220 /* SetNotificationIDRequestModel.swift in Sources */,
 				103339C920C3EF9C002F4220 /* LoginRequestModel.swift in Sources */,
+				1098665820F9E349003F6746 /* ContactTableViewCell.swift in Sources */,
 				1079129F20A9871C00FDBE9E /* AwardsTableViewCell.swift in Sources */,
 				10E0A82120D76E690081E4E5 /* ParentOrg.swift in Sources */,
 				103339B520C3D3BB002F4220 /* URLs.swift in Sources */,
 				1004D06220DE614100B4ACCD /* Person.swift in Sources */,
 				10C942B620A864160053B1B1 /* AppDelegate.swift in Sources */,
+				10504E0020F3950600895535 /* GetQRCodeRes.swift in Sources */,
 				109848F220F0C7E2007F61AC /* PermissionPopupViewController.swift in Sources */,
 				1004D06820DE626E00B4ACCD /* GetLevelRes.swift in Sources */,
 				103339CF20C3FC18002F4220 /* GetListRequestModel.swift in Sources */,
@@ -682,6 +717,8 @@
 				103339C320C3DB1D002F4220 /* ResponseModel.swift in Sources */,
 				1092F26A20ECC60100A41B0C /* SendMessageViewController.swift in Sources */,
 				1004D06120DE614000B4ACCD /* GetProfileRes.swift in Sources */,
+				1098665B20F9EAEE003F6746 /* InviteFriendsViewController.swift in Sources */,
+				10621C6420FCB52700D3C30C /* GetAllContactRes.swift in Sources */,
 				104C6CD320D7BF9B0084E2B2 /* ClubsViewController.swift in Sources */,
 				103339DF20C413DD002F4220 /* SendCommentRequestModel.swift in Sources */,
 				10C942BE20A864160053B1B1 /* CClub.xcdatamodeld in Sources */,
@@ -689,6 +726,7 @@
 				104C6CD520D7C0340084E2B2 /* ProfileViewController.swift in Sources */,
 				103339DD20C41343002F4220 /* GiftDeleteLikeRequestModel.swift in Sources */,
 				103339D720C40D8A002F4220 /* GetCommentRequestModel.swift in Sources */,
+				1098665D20FA2027003F6746 /* InvitationContactViewController.swift in Sources */,
 				1092F26F20ECDF8900A41B0C /* User.swift in Sources */,
 				1004D06B20DE626E00B4ACCD /* OrganizationPersonLevel.swift in Sources */,
 				103339C120C3D7A3002F4220 /* LoadingViewController.swift in Sources */,
@@ -860,7 +898,7 @@
 				DEVELOPMENT_TEAM = 7358RL8G34;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/**";
 				INFOPLIST_FILE = CClub/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -880,7 +918,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7358RL8G34;
 				INFOPLIST_FILE = CClub/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

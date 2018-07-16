@@ -1,11 +1,11 @@
 PODS:
   - AFDateHelper (4.2.7)
-  - Alamofire (4.7.2)
+  - Alamofire (4.7.3)
   - AlamofireNetworkActivityLogger (2.3.0):
     - Alamofire (~> 4.6)
   - BvMapCluster (0.1.6):
     - ClusterKit (= 0.2.0)
-  - CHIPageControl/Aji (0.1.5)
+  - CHIPageControl/Aji (0.1.6)
   - ClusterKit (0.2.0):
     - ClusterKit/Core (= 0.2.0)
   - ClusterKit/Core (0.2.0)
@@ -15,13 +15,14 @@ PODS:
   - DCKit (1.0.10)
   - Gallery (2.0.6)
   - IGRPhotoTweaks (1.0.7)
-  - IQKeyboardManagerSwift (6.0.3)
-  - Kingfisher (4.7.0)
+  - IQKeyboardManagerSwift (6.1.0)
+  - Kingfisher (4.8.0)
   - lottie-ios (2.5.0)
   - MapKitGoogleStyler (0.1.1)
-  - ObjectMapper (3.1.0)
-  - OneSignal (2.8.4)
+  - ObjectMapper (3.3.0)
+  - OneSignal (2.8.5)
   - PagingTableView (0.1.0)
+  - PersianDatePicker (0.5.0)
   - QRCode (2.0)
   - RangeSeekSlider (1.7.0)
   - Spring (1.0.5)
@@ -47,6 +48,7 @@ DEPENDENCIES:
   - ObjectMapper (~> 3.1)
   - OneSignal
   - PagingTableView
+  - PersianDatePicker
   - QRCode
   - RangeSeekSlider
   - Spring (from `https://github.com/MengTo/Spring.git`)
@@ -75,6 +77,7 @@ SPEC REPOS:
     - ObjectMapper
     - OneSignal
     - PagingTableView
+    - PersianDatePicker
     - QRCode
     - RangeSeekSlider
     - SWXMLHash
@@ -93,23 +96,24 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFDateHelper: 4ad66fb19503041fbba8a3018cb7ef9c71b2ff88
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireNetworkActivityLogger: 6f3076652ab7fa6c819b59be08ea038d339e36d8
   BvMapCluster: 6a51aef141aebca33a8be23f54d9cfc2c45f4aa0
-  CHIPageControl: 79d19a8ee2e35fa3c1da6533adb5364c77b5cfea
+  CHIPageControl: 21b85bb8c7d4d1d15fc4f353e1eb095eb75de5f1
   ClusterKit: f198b2d4fb9656b00889d1df319791237a6b9855
   CodableAlamofire: e2d2edcec7cf413f7862c30c8fa98eded27a83f9
   CryptoSwift: cd2158be2bf639aabc63ec804707c7137c90157c
   DCKit: 5c331146967c08886cc47baf5903699fdb4dca81
   Gallery: 5489ae11d8010a3cc163030f6e92d618afbdf4df
   IGRPhotoTweaks: 8fe6b62c6599238d860b19b46a85a454e202f502
-  IQKeyboardManagerSwift: 04e8679f85e496bb2c474eeb9284052f1b3c391c
-  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
+  IQKeyboardManagerSwift: f5004f5860d9a8ed23a7ef7a156ae168828eb018
+  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   MapKitGoogleStyler: 8efdceb664fc1748a62a9e3b50a34b67a34247bc
-  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
-  OneSignal: 7218a5a787f6685de81bdb487e696439e8c8f59b
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  OneSignal: 42dae269c7eca517aee34963820e1eb922390031
   PagingTableView: ba7869ff22f7cf3f8b2190b0314688d2cb0e46c4
+  PersianDatePicker: ee74ea5f8b6269bd604c8fa70ea36529cf0a5282
   QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
   RangeSeekSlider: 0386c5a9aa5ebcb2fa5238e8a627280cf46c7c0a
   Spring: 3c7666eccefdeb87140008dc81043f89f8dbb787
@@ -118,6 +122,6 @@ SPEC CHECKSUMS:
   UICheckbox.Swift: 85715689206fac5bae38b308f19c2a3e00442c3b
   UIColor_Hex_Swift: c5ff88470499383b8fd85302d59344bb24ba9436
 
-PODFILE CHECKSUM: e45237408c46bd67b4bf29a19e86359d3a6f273c
+PODFILE CHECKSUM: ebad5e3809f0a9b522639a8a4d679223612a8681
 
 COCOAPODS: 1.5.3

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import UIColor_Hex_Swift
+import ContactsUI
 
 public class App {
     
@@ -211,6 +212,74 @@ public class App {
         UIGraphicsEndImageContext();
         
         return imageData
+    }
+    
+    
+    static func getContacts() -> [CNContact] { //  ContactsFilter is Enum find it below
+        
+        let contactStore = CNContactStore()
+        let keysToFetch = [
+            CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
+            CNContactPhoneNumbersKey,
+            CNContactEmailAddressesKey,
+            CNContactThumbnailImageDataKey] as [Any]
+        
+        var allContainers: [CNContainer] = []
+        do {
+            allContainers = try contactStore.containers(matching: nil)
+        } catch {
+            print("Error fetching containers") // you can use print()
+        }
+        
+        var results: [CNContact] = []
+        
+        for container in allContainers {
+            let fetchPredicate = CNContact.predicateForContactsInContainer(withIdentifier: container.identifier)
+            
+            do {
+                let containerResults = try contactStore.unifiedContacts(matching: fetchPredicate, keysToFetch: keysToFetch as! [CNKeyDescriptor])
+                results.append(contentsOf: containerResults)
+            } catch {
+                print("Error fetching containers")
+            }
+        }
+        return results
+    }
+    
+    
+    static func phoneNumberWithContryCode() -> [String] {
+        
+        let contacts = App.getContacts() // here calling the getContacts methods
+        var arrPhoneNumbers = [String]()
+        for contact in contacts {
+            for ContctNumVar: CNLabeledValue in contact.phoneNumbers {
+                if let fulMobNumVar  = ContctNumVar.value as? CNPhoneNumber {
+                    //let countryCode = fulMobNumVar.value(forKey: "countryCode") get country code
+                    if let MccNamVar = fulMobNumVar.value(forKey: "digits") as? String {
+                        arrPhoneNumbers.append(MccNamVar)
+                    }
+                }
+            }
+        }
+        return arrPhoneNumbers // here array has all contact numbers.
+    }
+    
+    static func phoneNumberWithName() -> [String : String] {
+        
+        let contacts = App.getContacts() // here calling the getContacts methods
+        var arrPhoneNumbers = [String : String]()
+        for contact in contacts {
+            for ContctNumVar: CNLabeledValue in contact.phoneNumbers {
+                if let fulMobNumVar  = ContctNumVar.value as? CNPhoneNumber {
+                    //let countryCode = fulMobNumVar.value(forKey: "countryCode") get country code
+                    if let MccNamVar = fulMobNumVar.value(forKey: "digits") as? String {
+                        let s = contact.givenName + contact.familyName
+                        arrPhoneNumbers[s] = MccNamVar
+                    }
+                }
+            }
+        }
+        return arrPhoneNumbers // here array has all contact numbers.
     }
     
 }

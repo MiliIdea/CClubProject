@@ -8,17 +8,6 @@
 
 import Foundation
 
-/*
- {
- "firstName": "ahmadi",
- "personId": 100023712,
- "phone": "091233456464",
- "rowId": 0,
- "sourcePhone": "09195651255",
- "ticket": "t09195651255|3923490470857175"
- }
- */
-
 class SendContactListRequestModel{
     
     init(firstName : String! , phone : String!) {

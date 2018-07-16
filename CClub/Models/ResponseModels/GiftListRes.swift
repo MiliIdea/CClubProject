@@ -13,7 +13,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct GiftListRes : Codable {
-    let rowId : Int?
+    let rowId : CLongLong?
     let fromDate : String?
     let fromOrganizationId : Int?
     let fromOrganizationName : String?

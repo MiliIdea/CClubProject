@@ -50,7 +50,9 @@ class ClubsViewController: UIViewController  , UITableViewDelegate , UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vC : ClubDetailViewController = (self.storyboard?.instantiateViewController(withIdentifier: "ClubDetailViewController"))! as! ClubDetailViewController
-        vC.organizationID = ((App.myClubs[indexPath.row].organizationId ?? 0).description)
+        let c : MyClubsRes = App.myClubs[indexPath.row]
+        vC.organizationID = ((c.organizationId ?? 0).description)
+        vC.thisClub = c
         self.navigationController?.pushViewController(vC, animated: true)
     }
     

@@ -13,7 +13,7 @@ class SendMessageViewController: UIViewController {
 
     @IBOutlet var messageTextView: DCBorderedTextView!
     
-    
+    var rowId : CLongLong = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,9 @@ class SendMessageViewController: UIViewController {
     }
     
     @IBAction func sendMessage(_ sender: Any) {
-        
+        MyRequests.saveComment(vc: self, txt: self.messageTextView.text, rowId: rowId, subject: .REWARD){ res in
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
 }

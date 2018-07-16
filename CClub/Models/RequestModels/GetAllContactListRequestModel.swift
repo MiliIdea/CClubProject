@@ -10,9 +10,9 @@ import Foundation
 //{"pageNo":1,"params":[{"condition":"EQUAL","key":"personId","value":"100023712"}],"ticket":"t09195651255|3923490470857175"}
 class GetAllContactListRequestModel{
     
-    init(firstName : String! , phone : String!) {
+    init() {
         
-        param = [ "pageNo":1 , "pageSize":100 ,"params":[["condition":"EQUAL","key":"personId","value":(App.loginRes?.personId?.description)!]],"ticket":(App.loginRes?.ticket)!]
+        param = [ "pageNo":1 , "pageSize":10000 ,"params":[["condition":"EQUAL","key":"personId","value":(App.loginRes?.personId?.description)!]],"ticket":(App.loginRes?.ticket)!]
         
     }
     

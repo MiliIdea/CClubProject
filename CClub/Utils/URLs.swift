@@ -47,5 +47,21 @@ public class URLs {
     static let editProfile = server + "coUserService/profileImprovementFAKE"
     
     static let saveImage = server + "file/save"
+
+    static let getUserQRCode = server + "ccard/findByOrg"
+    
+    static let like = server + "rewardConversionPop/save"
+    
+    static let disLike = server + "rewardConversionPop/delete"
+    
+    static let saveComment = server + "comment/save"
+    
+    static let getHistoryOfClub = server + "ReportService/userRewardDetailMobileWithDTO"
+    
+    static let sendContactList = server + "phoneContact/saveAll"
+    
+    static let getAllContacts = server + "phoneContact/list"
+    
+    static let getInvitationCode = server + "personOrganizationRelation/getInvitationCode"
     
 }

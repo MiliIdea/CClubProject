@@ -58,8 +58,20 @@ class MainPageViewController: UIViewController ,UICollectionViewDelegate , UICol
         
         self.myScrollView.contentSize = self.viewInScrollView.frame.size
         
+        
         self.callDatas()
+        
+        (self.tabBarItem)?.image = UIImage(named: "icons1")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        (self.tabBarItem)?.selectedImage = UIImage(named: "icons1")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        (self.tabBarItem)?.title = "خانه"
+        (self.tabBarItem)?.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+        
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.callDatas()
     }
 
     override func didReceiveMemoryWarning() {
@@ -184,7 +196,9 @@ class MainPageViewController: UIViewController ,UICollectionViewDelegate , UICol
         }else if(collectionView == self.clubsCollection){
             
             let vC : ClubDetailViewController = (self.storyboard?.instantiateViewController(withIdentifier: "ClubDetailViewController"))! as! ClubDetailViewController
+            let c : MyClubsRes = App.myClubs[indexPath.item]
             vC.organizationID = ((App.myClubs[indexPath.item].organizationId ?? 0).description)
+            vC.thisClub = c
             self.navigationController?.pushViewController(vC, animated: true)
             
         }else if(collectionView == self.newsCollection){

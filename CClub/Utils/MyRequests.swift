@@ -128,7 +128,7 @@ public class MyRequests {
         
         var l : LoadingViewController? = nil
         if(withLoading){l = App.showLoading(vc: vc)}
-        request(URLs.scoreList, method: .post , parameters: ["params":[["condition":"EQUAL","key": organizationID,"value":"1000"]],"ticket" : App.loginRes?.ticket ?? "" ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<[ScoreListRes]>>) in
+        request(URLs.scoreList, method: .post , parameters: ["params":[["condition":"EQUAL","key": "organizationID","value": organizationID]],"ticket" : App.loginRes?.ticket ?? "" ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<[ScoreListRes]>>) in
             if(withLoading){l!.disView()}
             resHandler(vc , res: response.result.value){ res in
                 completionHandler(res)
@@ -175,7 +175,7 @@ public class MyRequests {
         
         var l : LoadingViewController? = nil
         if(withLoading){l = App.showLoading(vc: vc)}
-        request(URLs.giftList, method: .post , parameters: ["ticket" : App.loginRes?.ticket ?? "" ,"params":[["condition":"EQUAL","key": organizationID ,"value":"1000"]] , "pageNo" : 1 , "pageSize" : 10 ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<[GiftListRes]>>) in
+        request(URLs.giftList, method: .post , parameters: ["ticket" : App.loginRes?.ticket ?? "" ,"params":[["condition":"EQUAL","key": "organizationID" ,"value": organizationID]] , "pageNo" : 1 , "pageSize" : 10 ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<[GiftListRes]>>) in
             if(withLoading){l!.disView()}
             resHandler(vc , res: response.result.value){ res in
                 completionHandler(res)
@@ -237,7 +237,7 @@ public class MyRequests {
         
         var l : LoadingViewController? = nil
         if(withLoading){l = App.showLoading(vc: vc)}
-        request(URLs.getProfile, method: .post , parameters: ["ticket" : App.loginRes?.ticket! ?? ""], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<GetLevelRes>>) in
+        request(URLs.getLevel, method: .post , parameters: ["ticket" : App.loginRes?.ticket! ?? ""], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<GetLevelRes>>) in
             if(withLoading){l!.disView()}
             resHandler(vc , res: response.result.value){ res in
                 completionHandler(res)
@@ -307,7 +307,203 @@ public class MyRequests {
         
     }
     
+    
+    
+    static func editProfile(vc : UIViewController ,lastName : String!, birthdate : String!, address : String!, secondChildBD : String!, latitude : String!, sex : String!, firstChildBD : String!, nationalId : String!, firstName : String!, phoneNumber : String!, email : String!, anniversary : String!  , longitude : String! ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<LoginRes>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.editProfile, method: .post , parameters: EditProfileUserRequestModel.init(lastName: lastName, birthdate: birthdate, address: address, secondChildBD: secondChildBD, latitude: latitude, sex: sex, firstChildBD: firstChildBD, nationalId: nationalId, firstName: firstName, phoneNumber: phoneNumber, email: email, anniversary: anniversary, longitude: longitude).getParams(), encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<LoginRes>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
+    
+    
+    static func like(vc : UIViewController , rowId : CLongLong ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<CLongLong>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.like, method: .post , parameters: ["ticket" : App.loginRes?.ticket! ?? "" , "liked":1,"rewardConversionFormula":["rowId": rowId],"rowId": 0 ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<CLongLong>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
+    
+    static func dislike(vc : UIViewController , rowId : CLongLong ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<String>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.disLike, method: .post , parameters: ["ticket" : App.loginRes?.ticket! ?? "" ,"rowId": rowId ], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<String>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
+    
+    
+    static func saveComment(vc : UIViewController , txt : String , rowId : CLongLong  , subject : CommentsSubject,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<CLongLong>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.saveComment, method: .post , parameters: SendCommentRequestModel.init(txt: txt, rowID: rowId, subject: subject).getParams(), encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<CLongLong>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
+    
+   
+    
+    
+    static func getHistoryOfClub(vc : UIViewController , organizationId : String,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<[GetHistoryOfClubRes]>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.getHistoryOfClub, method: .post , parameters: GetHistoryActivityClubRequestModel.init(organizationId: organizationId).getParams(), encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<[GetHistoryOfClubRes]>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
+    
+    
+    static func getUserQRCode(vc : UIViewController,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<GetQRCodeRes>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.getUserQRCode, method: .post , parameters: ["ticket" : App.loginRes?.ticket!], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<GetQRCodeRes>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
+    
+    
+    static func SendContacts(vc : UIViewController, contacts : [[String : Any]] , _ withLoading : Bool = true , completionHandler: @escaping (String?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        
+        let sessionConfig = URLSessionConfiguration.default
+        
+        /* Create session, and optionally set a NSURLSessionDelegate. */
+        let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
+        
+        
+        guard let URL = URL(string: URLs.sendContactList) else {return}
+        var request = URLRequest(url: URL)
+        request.httpMethod = "POST"
+        
+        // Headers
+        
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        
+        // JSON Body
+        
+        let bodyObject = contacts
+        request.httpBody = try! JSONSerialization.data(withJSONObject: bodyObject, options: [])
+        
+        /* Start a new Task */
+        let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
+            if(withLoading){l!.disView()}
+            if (error == nil) {
+                // Success
+                let statusCode = (response as! HTTPURLResponse).statusCode
+                completionHandler("success")
+            } else {
+                // Failure
+                completionHandler("error")
+            }
+        })
+        task.resume()
+        session.finishTasksAndInvalidate()
+        
+        
+    }
+    
+    
+    static func getAllContact(vc : UIViewController,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<[GetAllContactRes]>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        print(GetAllContactListRequestModel.init().getParams())
+        request(URLs.getAllContacts, method: .post , parameters: GetAllContactListRequestModel.init().getParams(), encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<[GetAllContactRes]>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
+    
+    
+    static func searchInContacts(vc : UIViewController ,txt : String ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<[GetAllContactRes]>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        print(GetAllContactListRequestModel.init().getParams())
+        request(URLs.getAllContacts, method: .post , parameters: SearchInContactsRequestModel.init(txt : txt).getParams(), encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<[GetAllContactRes]>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
+    static func getInvitationCode(vc : UIViewController ,_ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<GetInvitationCodeRes>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.getInvitationCode, method: .post , parameters: ["ticket" : App.loginRes?.ticket! ?? ""], encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<GetInvitationCodeRes>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
 }
+
+
+
+
+
+
+
+
+
 
 
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class ContactViewController: UIViewController {
 
@@ -20,6 +21,7 @@ class ContactViewController: UIViewController {
     @IBOutlet var phoneButton: UIButton!
     @IBOutlet var routingButton: UIButton!
     
+    @IBOutlet var map: MKMapView!
     
     
     override func viewDidLoad() {

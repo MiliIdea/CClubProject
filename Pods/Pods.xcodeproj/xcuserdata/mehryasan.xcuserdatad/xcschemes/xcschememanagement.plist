@@ -116,68 +116,75 @@
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
-		<key>Pods-CClub.xcscheme</key>
+		<key>PersianDatePicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>17</integer>
 		</dict>
-		<key>QRCode.xcscheme</key>
+		<key>Pods-CClub.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>18</integer>
 		</dict>
-		<key>RangeSeekSlider.xcscheme</key>
+		<key>QRCode.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>19</integer>
 		</dict>
-		<key>SWXMLHash.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>21</integer>
-		</dict>
-		<key>Spring.xcscheme</key>
+		<key>RangeSeekSlider.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>20</integer>
 		</dict>
-		<key>Toast-Swift.xcscheme</key>
+		<key>SWXMLHash.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>22</integer>
 		</dict>
-		<key>UICheckbox.Swift-UICheckbox.xcscheme</key>
+		<key>Spring.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>24</integer>
+			<integer>21</integer>
 		</dict>
-		<key>UICheckbox.Swift.xcscheme</key>
+		<key>Toast-Swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>23</integer>
 		</dict>
-		<key>UIColor_Hex_Swift.xcscheme</key>
+		<key>UICheckbox.Swift-UICheckbox.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>25</integer>
+		</dict>
+		<key>UICheckbox.Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>24</integer>
+		</dict>
+		<key>UIColor_Hex_Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>26</integer>
 		</dict>
 		<key>lottie-ios.xcscheme</key>
 		<dict>

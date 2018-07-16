@@ -14,4 +14,8 @@ public class DefaultStrings{
     
     static let isItGuest = "isItGuest"
     
+    static let isSendedContacts = "isSendedContacts"
+    
+    static let contacts = "contacts"
+    
 }
