@@ -63,6 +63,12 @@
 		10621C6220FB7DB000D3C30C /* GetInvitationCodeRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10621C6120FB7DB000D3C30C /* GetInvitationCodeRes.swift */; };
 		10621C6420FCB52700D3C30C /* GetAllContactRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10621C6320FCB52700D3C30C /* GetAllContactRes.swift */; };
 		10621C6620FCCC9F00D3C30C /* SearchInContactsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10621C6520FCCC9F00D3C30C /* SearchInContactsRequestModel.swift */; };
+		10621C6820FDEDF800D3C30C /* GetDetailPollRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10621C6720FDEDF800D3C30C /* GetDetailPollRequestModel.swift */; };
+		10621C6A20FDEE1200D3C30C /* GetPollsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10621C6920FDEE1200D3C30C /* GetPollsRequestModel.swift */; };
+		10621C6C20FE064A00D3C30C /* GetPollRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10621C6B20FE064A00D3C30C /* GetPollRes.swift */; };
+		10621C6E20FE07E700D3C30C /* PollsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10621C6D20FE07E700D3C30C /* PollsViewController.swift */; };
+		10621C7120FE08B000D3C30C /* PollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10621C6F20FE08B000D3C30C /* PollTableViewCell.swift */; };
+		10621C7220FE08B000D3C30C /* PollTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10621C7020FE08B000D3C30C /* PollTableViewCell.xib */; };
 		1076018520DF7ABB00ACF9F1 /* ClubDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076018420DF7ABB00ACF9F1 /* ClubDetailViewController.swift */; };
 		1078A3FC20AAAD1600F1F2AA /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078A3FB20AAAD1600F1F2AA /* MainPageViewController.swift */; };
 		1079129F20A9871C00FDBE9E /* AwardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1079129D20A9871C00FDBE9E /* AwardsTableViewCell.swift */; };
@@ -170,6 +176,12 @@
 		10621C6120FB7DB000D3C30C /* GetInvitationCodeRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInvitationCodeRes.swift; sourceTree = "<group>"; };
 		10621C6320FCB52700D3C30C /* GetAllContactRes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAllContactRes.swift; sourceTree = "<group>"; };
 		10621C6520FCCC9F00D3C30C /* SearchInContactsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInContactsRequestModel.swift; sourceTree = "<group>"; };
+		10621C6720FDEDF800D3C30C /* GetDetailPollRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDetailPollRequestModel.swift; sourceTree = "<group>"; };
+		10621C6920FDEE1200D3C30C /* GetPollsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPollsRequestModel.swift; sourceTree = "<group>"; };
+		10621C6B20FE064A00D3C30C /* GetPollRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPollRes.swift; sourceTree = "<group>"; };
+		10621C6D20FE07E700D3C30C /* PollsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollsViewController.swift; sourceTree = "<group>"; };
+		10621C6F20FE08B000D3C30C /* PollTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollTableViewCell.swift; sourceTree = "<group>"; };
+		10621C7020FE08B000D3C30C /* PollTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PollTableViewCell.xib; sourceTree = "<group>"; };
 		1076018420DF7ABB00ACF9F1 /* ClubDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDetailViewController.swift; sourceTree = "<group>"; };
 		1078A3FB20AAAD1600F1F2AA /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		1079129D20A9871C00FDBE9E /* AwardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsTableViewCell.swift; sourceTree = "<group>"; };
@@ -262,6 +274,8 @@
 				103339E420C41A95002F4220 /* SaveChangeNotificationRequestModel.swift */,
 				1036DF3320F2279000A81F91 /* UploadImageRequestModel.swift */,
 				10621C6520FCCC9F00D3C30C /* SearchInContactsRequestModel.swift */,
+				10621C6920FDEE1200D3C30C /* GetPollsRequestModel.swift */,
+				10621C6720FDEDF800D3C30C /* GetDetailPollRequestModel.swift */,
 			);
 			path = RequestModels;
 			sourceTree = "<group>";
@@ -284,6 +298,7 @@
 				10504DFF20F3950600895535 /* GetQRCodeRes.swift */,
 				10621C6120FB7DB000D3C30C /* GetInvitationCodeRes.swift */,
 				10621C6320FCB52700D3C30C /* GetAllContactRes.swift */,
+				10621C6B20FE064A00D3C30C /* GetPollRes.swift */,
 			);
 			path = ResponseModels;
 			sourceTree = "<group>";
@@ -361,6 +376,8 @@
 				1092F25F20EC9EED00A41B0C /* NotificationTableViewCell.xib */,
 				1098665620F9E349003F6746 /* ContactTableViewCell.swift */,
 				1098665720F9E349003F6746 /* ContactTableViewCell.xib */,
+				10621C6F20FE08B000D3C30C /* PollTableViewCell.swift */,
+				10621C7020FE08B000D3C30C /* PollTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -404,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				104C6CCE20D7BF640084E2B2 /* ScoreViewController.swift */,
+				10621C6D20FE07E700D3C30C /* PollsViewController.swift */,
 			);
 			path = ScoreTab;
 			sourceTree = "<group>";
@@ -557,6 +575,7 @@
 				108D369820D943D600D6BFEC /* iran_sans.ttf in Resources */,
 				104C6CCC20D7B9400084E2B2 /* ClubTableViewCell.xib in Resources */,
 				108D369E20DA2D0A00D6BFEC /* loading1.json in Resources */,
+				10621C7220FE08B000D3C30C /* PollTableViewCell.xib in Resources */,
 				108D369720D943D600D6BFEC /* icomoon.ttf in Resources */,
 				107912A820A9876D00FDBE9E /* AdvertisementTableViewCell.xib in Resources */,
 				107912A020A9871C00FDBE9E /* AwardsTableViewCell.xib in Resources */,
@@ -681,6 +700,7 @@
 				10E0A82820D76F760081E4E5 /* MyClubsRes.swift in Sources */,
 				1092F26620ECB53400A41B0C /* SettingsViewController.swift in Sources */,
 				10C942B820A864160053B1B1 /* RegisterViewController.swift in Sources */,
+				10621C6C20FE064A00D3C30C /* GetPollRes.swift in Sources */,
 				10504DFE20F385DA00895535 /* GetHistoryOfClubRes.swift in Sources */,
 				10621C6220FB7DB000D3C30C /* GetInvitationCodeRes.swift in Sources */,
 				104C6CBF20D7A5A90084E2B2 /* ToPhoto.swift in Sources */,
@@ -688,6 +708,7 @@
 				105164B320EBA53E0097F4DE /* GiftDetailViewController.swift in Sources */,
 				103339D320C4042A002F4220 /* SendContactListRequestModel.swift in Sources */,
 				103339CB20C3F577002F4220 /* RegisterRequestModel.swift in Sources */,
+				10621C6A20FDEE1200D3C30C /* GetPollsRequestModel.swift in Sources */,
 				108D36A020DA51F800D6BFEC /* MainTabBarController.swift in Sources */,
 				10E0A82320D76EEF0081E4E5 /* GiftListRes.swift in Sources */,
 				1078A3FC20AAAD1600F1F2AA /* MainPageViewController.swift in Sources */,
@@ -699,6 +720,7 @@
 				1079129F20A9871C00FDBE9E /* AwardsTableViewCell.swift in Sources */,
 				10E0A82120D76E690081E4E5 /* ParentOrg.swift in Sources */,
 				103339B520C3D3BB002F4220 /* URLs.swift in Sources */,
+				10621C7120FE08B000D3C30C /* PollTableViewCell.swift in Sources */,
 				1004D06220DE614100B4ACCD /* Person.swift in Sources */,
 				10C942B620A864160053B1B1 /* AppDelegate.swift in Sources */,
 				10504E0020F3950600895535 /* GetQRCodeRes.swift in Sources */,
@@ -731,12 +753,14 @@
 				1004D06B20DE626E00B4ACCD /* OrganizationPersonLevel.swift in Sources */,
 				103339C120C3D7A3002F4220 /* LoadingViewController.swift in Sources */,
 				1036DF3420F2279000A81F91 /* UploadImageRequestModel.swift in Sources */,
+				10621C6E20FE07E700D3C30C /* PollsViewController.swift in Sources */,
 				104C6CCF20D7BF640084E2B2 /* ScoreViewController.swift in Sources */,
 				104C6CCB20D7B9400084E2B2 /* ClubTableViewCell.swift in Sources */,
 				10E0A81C20D76E690081E4E5 /* CreatedBy.swift in Sources */,
 				103339C720C3E4C5002F4220 /* Access.swift in Sources */,
 				103339DB20C41051002F4220 /* GiftLikeRequestModel.swift in Sources */,
 				103339E320C419E2002F4220 /* GetHistoryActivityClubRequestModel.swift in Sources */,
+				10621C6820FDEDF800D3C30C /* GetDetailPollRequestModel.swift in Sources */,
 				103339E520C41A95002F4220 /* SaveChangeNotificationRequestModel.swift in Sources */,
 				1092F26E20ECDF8900A41B0C /* CommentRes.swift in Sources */,
 				1092F26820ECB58B00A41B0C /* ContactViewController.swift in Sources */,

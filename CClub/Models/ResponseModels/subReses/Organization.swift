@@ -18,7 +18,7 @@ struct Organization : Codable {
 	let accessKey : String?
 	let active : Bool?
 	let fullTitle : String?
-	let rowId : Int?
+	let rowId : CLongLong?
 	let name : String?
 	let establishingYear : Int?
 	let ownerLastName : String?

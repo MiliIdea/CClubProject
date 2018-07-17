@@ -493,6 +493,35 @@ public class MyRequests {
     
     
     
+    static func getPolls(vc : UIViewController ,organizationID : String , _ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<[GetPollRes]>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.getPolls, method: .post , parameters: GetPollsRequestModel.init(organizationRowID: organizationID).getParams(), encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<[GetPollRes]>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
+    
+    
+    static func getDetailPolls(vc : UIViewController ,scenarioID : String , _ withLoading : Bool = true , completionHandler: @escaping (ResponseModel<GetInvitationCodeRes>?) -> Void){
+        
+        var l : LoadingViewController? = nil
+        if(withLoading){l = App.showLoading(vc: vc)}
+        request(URLs.getDetailPoll, method: .post , parameters: GetDetailPollRequestModel.init(scenarioID: scenarioID).getParams(), encoding: JSONEncoding.default).responseDecodableObject(decoder: App.decoder) { (response : DataResponse<ResponseModel<GetInvitationCodeRes>>) in
+            if(withLoading){l!.disView()}
+            resHandler(vc , res: response.result.value){ res in
+                completionHandler(res)
+            }
+            
+        }
+        
+    }
+    
     
 }
 

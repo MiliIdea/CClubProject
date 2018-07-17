@@ -64,4 +64,8 @@ public class URLs {
     
     static let getInvitationCode = server + "personOrganizationRelation/getInvitationCode"
     
+    static let getPolls = server + "scenario/listMobile"
+    
+    static let getDetailPoll = server + "question/findByScenario"
+    
 }

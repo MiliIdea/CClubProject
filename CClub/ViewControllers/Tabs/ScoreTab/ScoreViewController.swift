@@ -50,6 +50,22 @@ class ScoreViewController: UIViewController  , UITableViewDelegate , UITableView
         return 115 * self.view.frame.height / 667
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let c = App.scoreList[indexPath.row]
+        if(c.eventType?.rowId == 1002){
+            MyRequests.getPolls(vc: self, organizationID: (c.organization?.rowId?.description)!){res in
+                if(res != nil && (res?.done)! && res?.result != nil && (res?.result?.count)! > 0){
+                    let vC : PollsViewController = (self.storyboard?.instantiateViewController(withIdentifier: "PollsViewController"))! as! PollsViewController
+                    vC.polls = (res?.result)!
+                    self.navigationController?.pushViewController(vC, animated: true)
+                }
+            }
+        }
+        
+    }
+    
+    
+    
 }
 
 

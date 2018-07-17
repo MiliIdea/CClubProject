@@ -95,14 +95,14 @@ public class App {
     }
     
     
-    static let type_submit_bye_cod : Int = 1000;
-    static let type_survey : Int = 1002;
-    static let type_send_data : Int = 1003;
-    static let type_invite : Int = 1004;
-    static let type_add_club : Int = 1005;
-    static let type_store_cclub : Int = 1006;
-    static let type_sharj : Int = 1007;
-    static let type_profile : Int = 1008;
+    static let type_submit_bye_cod : Int = 1000
+    static let type_survey : Int = 1002
+    static let type_send_data : Int = 1003
+    static let type_invite : Int = 1004
+    static let type_add_club : Int = 1005
+    static let type_store_cclub : Int = 1006
+    static let type_sharj : Int = 1007
+    static let type_profile : Int = 1008
     
     static func getScoreIcon(id : Int) -> String{
         switch id {

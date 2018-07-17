@@ -211,6 +211,26 @@ class GiftDetailViewController: UIViewController  , UITableViewDelegate , UITabl
         }
     }
     
+    
+    @IBAction func share(_ sender: Any) {
+        
+        let text = "جایزه " + (self.giftData?.toRewardsListName)! + " ارائه دهنده" + (self.giftData?.fromOrganizationName)!
+        
+        // set up activity view controller
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+        
+    }
+    
+    
+    
 }
 
 
