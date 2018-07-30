@@ -49,6 +49,7 @@ class LoginViewController: UIViewController {
         }
         MyRequests.login(vc: self, phone: phoneNumber, code: invitationCode.text!){ res in
 
+            print(res)
             if(res != nil && (res?.done)!){
                 do {
                     let data = try JSONEncoder().encode(res?.result)
