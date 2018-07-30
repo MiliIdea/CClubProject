@@ -106,6 +106,7 @@ class ProfileViewController: UIViewController ,GalleryControllerDelegate , IGRPh
     func callDatas(){
         l = App.showLoading(vc: self)
         MyRequests.getProfile(vc: self, false){res in
+            print(res)
             if(res != nil){
                 if(res?.done)!{
                     App.getProfileRes = res?.result!

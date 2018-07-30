@@ -297,13 +297,13 @@
                                                         <fragment content="کد فعالسازی برایتان ارسال نشده؟   ">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="11" name="IRANSansMobile"/>
+                                                                <font key="NSFont" metaFont="smallSystem"/>
                                                             </attributes>
                                                         </fragment>
                                                         <fragment content="ارسال مجدد کد">
                                                             <attributes>
                                                                 <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="11" name="IRANSansMobile"/>
+                                                                <font key="NSFont" metaFont="smallSystem"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -2300,20 +2300,20 @@
                                 <attributedString key="attributedText">
                                     <fragment content="برای مطلب ">
                                         <attributes>
-                                            <font key="NSFont" size="14" name="IRANSansMobile"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="قرعه کشی هواپیمای دو نفره">
                                         <attributes>
                                             <color key="NSColor" red="0.97254901960784312" green="0.2196078431372549" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="14" name="IRANSansMobile"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content=" نظر بدهید:">
                                         <attributes>
-                                            <font key="NSFont" size="14" name="IRANSansMobile"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
